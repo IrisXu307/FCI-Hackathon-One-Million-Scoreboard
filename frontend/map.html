@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map · Vision One Million</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <h1>Vision One Million</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2>Metrics</h2>
+
+      <label for="categorySelect">Category</label>
+      <select id="categorySelect">
+        <option value="housing">Housing</option>
+        <option value="transit">Transit</option>
+        <option value="economy">Economy</option>
+      </select>
+
+      <label for="metricSelect">Metric</label>
+      <select id="metricSelect">
+        <option value="density">Density</option>
+        <option value="price">Price</option>
+      </select>
+
+      <button onclick="updateMap()">Update Map</button>
+
+      <div class="metric-info">
+        <h3>Details</h3>
+        <p id="metricDetails">Loading boundaries…</p>
+      </div>
+    </div>
+
+    <div style="position:relative; flex:1;">
+      <div id="map"></div>
+      <div id="loadingOverlay">
+        <div class="spinner"></div>
+        <p>Fetching city boundaries…</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
