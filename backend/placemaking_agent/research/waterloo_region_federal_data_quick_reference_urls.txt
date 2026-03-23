@@ -1,0 +1,342 @@
+================================================================================
+WATERLOO REGION FEDERAL PLACEMAKING METRICS - QUICK REFERENCE URLS
+Compiled: January 2026
+================================================================================
+
+## STATISTICS CANADA - DIRECT DATA ACCESS
+
+URBAN GREENNESS (SATELLITE-BASED)
+Table 38-10-0158-01 (2000-2025, Annual)
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810015801
+[Normalized Difference Vegetation Index, % green by population centre]
+
+Publication: Census of Environment - Urban Greenness 2022
+https://www150.statcan.gc.ca/n1/daily-quotidien/221117/dq221117e-eng.htm
+
+Publication: Census of Environment - Urban Greenness 2025
+https://www150.statcan.gc.ca/n1/daily-quotidien/251117/dq251117c-eng.htm
+
+PARKS AND GREEN SPACES ACCESS
+Table 38-10-0022-01 (Parks and green spaces by household income)
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810002201
+
+Table 38-10-0020-01 (General parks and green spaces access)
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810002001
+
+CENSUS 2021 - KITCHENER-CAMBRIDGE-WATERLOO CMA
+Focus on Geography Series
+https://www12.statcan.gc.ca/census-recensement/2021/as-sa/fogs-spg/Page.cfm?lang=e&topic=1&dguid=2021S0503541
+[Population, housing, density data by municipality]
+
+VEGETATION COVER IN LARGE URBAN AREAS
+Table 38-10-0187-01
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810018701
+
+ECOSYSTEM ACCOUNTING FOR LARGE URBAN AREAS
+Human Activity and the Environment Report 2021
+https://www150.statcan.gc.ca/n1/pub/16-001-m/16-001-m2025003-eng.htm
+
+STATISTICS CANADA DATA REQUEST SERVICE
+Custom tabulation requests: https://www.statcan.gc.ca/eng/about/service/custom-tabulation-service
+Customer service: statcan.infostats-infostats.statcan@canada.ca
+Phone: 1-800-263-1136
+
+================================================================================
+
+## CMHC - HOUSING AND DEVELOPMENT DATA
+
+HOUSING MARKET OUTLOOK - February 2025 (Latest)
+https://assets.cmhc-schl.gc.ca/sites/cmhc/professional/housing-markets-data-and-research/market-reports/housing-market-outlook/2025/housing-market-outlook-02-2025-en.pdf
+
+RENTAL MARKET REPORT 2025 - Kitchener-Cambridge-Waterloo CMA (Excel Data)
+https://assets.cmhc-schl.gc.ca/sites/cmhc/professional/housing-markets-data-and-research/housing-data-tables/rental-market/rental-market-report-data-tables/2025/rmr-kitchener-cambridge-waterloo-2025-en.xlsx
+
+MARKET REPORTS PORTAL - All Reports and Data Tables
+https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/market-reports/rental-market-reports-major-centres
+
+HOUSING MARKET OUTLOOK - Current and Archived
+https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/market-reports/housing-market/housing-market-outlook
+
+HISTORICAL CMHC DATA - 2017 Kitchener-Cambridge-Waterloo Insight Report
+https://publications.gc.ca/collections/collection_2017/schl-cmhc/nh12-290/NH12-290-2017-2-eng.pdf
+
+CMHC RESEARCH CONTACT
+Email: cmhc.research@cmhc-schl.gc.ca
+Phone: 1-800-668-2642
+Web: https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research
+
+================================================================================
+
+## INFRASTRUCTURE CANADA - FEDERAL INVESTMENT DATA
+
+PUBLIC TRANSIT INFRASTRUCTURE INVESTMENT - December 2025
+Waterloo Region $291+ Million Partnership Announcement
+https://www.canada.ca/en/housing-infrastructure-communities/news/2025/12/canada-ontario-and-the-region-of-waterloo-invest-in-public-transit-improvements.html
+
+Ontario Government Backgrounder - Transit Investment Details
+https://news.ontario.ca/en/backgrounder/1006872/canada-ontario-and-the-region-of-waterloo-invest-in-public-transit-improvements
+
+NATURAL INFRASTRUCTURE FUND (NIF) - Waterloo Region Project
+Growing a Greener and More Equitable Waterloo Region
+https://www.canada.ca/en/housing-infrastructure-communities/news/2025/11/growing-a-greener-and-more-equitable-waterloo-region.html
+
+NIF Grant Award (School Tree Planting): $176,000
+https://search.open.canada.ca/grants/record/infc%2C278-2024-2025-Q4-00011%2Ccurrent
+
+INVESTING IN CANADA PLAN - Main Portal
+Program Overview and Funding Streams
+https://housing-infrastructure.canada.ca/plan/icp-pic-INFC-eng.html
+
+INVESTING IN CANADA PLAN - About and Objectives
+https://housing-infrastructure.canada.ca/plan/about-invest-apropos-eng.html
+
+HISTORICAL INFRASTRUCTURE INVESTMENT - COVID-19 Response
+Canada-Ontario Infrastructure Program Progress Report (includes Waterloo)
+https://publications.gc.ca/site/eng/238635/publication.html
+
+Waterloo City Pathway & Parks Investment (2020)
+https://news.ontario.ca/en/release/1000437/canada-and-ontario-invest-more-than-512-million-in-municipal-infrastructure-to-respond-to-the-impacts-of-covid-19-in-southwestern-midwestern-and-central-ontario
+
+INFRASTRUCTURE CANADA CONTACT
+Email: HHIC.PublicEnquiries-DemandespubliquesSHIC@canada.ca
+Phone: 1-844-966-6632
+Web: https://housing-infrastructure.canada.ca/
+
+================================================================================
+
+## FEDERATION OF CANADIAN MUNICIPALITIES (FCM) - GRANT PROGRAMS
+
+GREEN MUNICIPAL FUND - Tree Planting Program Overview
+https://greenmunicipalfund.ca/funding/tree-planting
+
+GROWING CANADA'S COMMUNITY CANOPIES - Program Information
+City of Waterloo Award: $1.9 Million (10,000 trees)
+https://www.waterloo.ca/news/posts/city-of-waterloo-receives-1-9-million-grant-for-10-000-trees/
+
+City of Kitchener Award: $2.5 Million (tree planting)
+https://www.therecord.com/news/waterloo-region/kitchener-receives-2-5-million-tree-planting-grant/article_227e5031-dcbe-58ee-aa6c-f9e6edf77d41.html
+
+PROJECT TRACKER - Waterloo 10K Trees Initiative
+https://www.engagewr.ca/10k-trees
+
+FCM GREEN MUNICIPAL FUND - Main Portal
+https://greenmunicipalfund.ca/
+
+FCM CASE STUDIES - Waterloo Region Projects
+ION Light Rail System: https://greenmunicipalfund.ca/case-studies/case-study-region-waterloo-develops-lrt-connect-its-urban-centres
+Sustainable Homes Community: https://greenmunicipalfund.ca/case-studies/case-study-sustainable-homes-stronger-community
+
+FCM CONTACT
+Email: info@greenmunicipalfund.ca
+Web: https://greenmunicipalfund.ca/
+
+================================================================================
+
+## CANADIAN CITY PARKS REPORT - PARK PROVISION DATA
+
+CANADIAN CITY PARKS REPORT - Main Portal (2019-2024)
+https://parkpeople.ca/canadian-city-parks-report-findings-and-impact-2019-2024/
+
+Kitchener - 2023 Canadian City Parks Report (Latest Available)
+https://ccpr.parkpeople.ca/2023/cities/kitchener-2022
+[7.3 ha/1000 people park provision rate]
+
+Kitchener - 2021 Canadian City Parks Report
+https://ccpr.parkpeople.ca/2021/cities/kitchener/
+
+PARK PEOPLE - Request Custom Analysis
+Email: Available on website
+Web: https://parkpeople.ca/
+[Can provide Cambridge and Waterloo city reports and custom municipal analysis]
+
+================================================================================
+
+## WATERLOO REGION MUNICIPAL PLANNING DATA
+
+REGION OF WATERLOO - MAIN PORTAL
+Web: https://www.regionofwaterloo.ca/
+Parks and Recreation Services
+Capital Project Information
+Asset Management Plans
+
+CITY OF WATERLOO
+Web: https://www.waterloo.ca/
+Housing Needs Assessment (2025):
+https://www.waterloo.ca/media/qb0idrtw/2025-city-of-waterloo-housing-needs-assessment.pdf
+
+Affordable Housing Strategy:
+https://www.waterloo.ca/media/nfrf4dtp/affordable-housing-strategy.pdf
+
+Capital Budget 2024-2026 (Parks & Placemaking Projects):
+https://www.waterloo.ca/media/m50nnjd3/2024-2026-approved-capital-budget-and-2027-2033-capital-forecast.pdf
+
+Waterloo Uptown Public Realm Strategy (Stantec):
+https://www.stantec.com/en/projects/canada-projects/w/waterloo-uptown-public-realm-strategy
+
+Government Funding Support Information:
+https://www.waterloo.ca/council-and-city-administration/budget-and-financial-reports/how-government-funding-supports-our-city/
+
+Tree Planting Initiative - 10,000 Trees:
+https://www.waterloo.ca/news/posts/city-of-waterloo-receives-1-9-million-grant-for-10-000-trees/
+
+Phone: (519) 747-8585
+
+CITY OF KITCHENER
+Web: https://www.kitchener.ca/
+Parks Planning Department
+Master Plans and Strategies
+
+CITY OF CAMBRIDGE
+Web: https://www.cambridge.ca/
+Parks and Recreation Services
+Capital Projects
+
+REGION OF WATERLOO ASSET MANAGEMENT PLAN (2025)
+https://pub-regionofwaterloo.escribemeetings.com/filestream.ashx?DocumentId=13241
+[$294.1M annual average investment over 10 years]
+
+REGION OF WATERLOO ANNUAL BUSINESS PLAN
+Recent Mid-Year Update:
+https://pub-regionofwaterloo.escribemeetings.com/filestream.ashx?DocumentId=14102
+
+================================================================================
+
+## LOCAL/REGIONAL ENVIRONMENTAL INITIATIVES
+
+WATERLOO REGION COMMUNITY ENVIRONMENTAL FUND (2025)
+$90,000 distributed to 16 community projects
+https://www.regionofwaterloo.ca/Modules/News/index.aspx
+
+WATERLOO REGION GREEN ECONOMY STUDY
+"Measuring the Green Economy - Waterloo Region"
+https://uwaterloo.ca/implementing-sustainable-community-plans/sites/default/files/uploads/documents/measuring-the-green-economy-waterloo-region.pdf
+[Distribution of green businesses: Kitchener 33%, Cambridge 26%, Waterloo 23%, others smaller %]
+
+================================================================================
+
+## ADDITIONAL FEDERAL RESOURCES
+
+CANADA MORTGAGE AND HOUSING CORPORATION (CMHC) - Housing Research
+https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research
+
+ENVIRONMENT AND CLIMATE CHANGE CANADA (ECCC)
+Urban Forest Resources: https://www.canada.ca/en/environment-climate-change.html
+
+STATISTICS CANADA - MAIN PORTAL
+https://www.statcan.gc.ca/
+
+Data Request Services:
+https://www.statcan.gc.ca/eng/about/service/statcan-customer-service-centers
+
+INFRASTRUCTURE CANADA - MAIN PORTAL
+https://housing-infrastructure.canada.ca/
+
+OPEN GOVERNMENT PORTAL - Grants and Contributions Database
+Search Waterloo Region projects: https://search.open.canada.ca/grants/
+
+================================================================================
+
+## ACADEMIC/RESEARCH SOURCES
+
+UNIVERSITY OF WATERLOO - Sustainable Community Planning
+Green Economy Reports: https://uwaterloo.ca/implementing-sustainable-community-plans/
+
+Integration of Green Infrastructure and Equity in Urban Planning:
+https://uwspace.uwaterloo.ca/
+
+================================================================================
+
+## NEWS AND REPORTING SOURCES (For Context)
+
+CBC KITCHENER-WATERLOO
+Urban Greenness Report (2022):
+https://www.cbc.ca/news/canada/kitchener-waterloo/urban-greenness-kitchenr-guelph-stats-canada-1.6415735
+
+Housing Market Updates:
+https://kitchener.citynews.ca/
+
+CITY NEWS KITCHENER
+CMHC Housing Market Reports:
+https://kitchener.citynews.ca/
+
+THE RECORD (Regional Newspaper)
+Waterloo Region coverage: https://www.therecord.com/news/waterloo-region/
+
+================================================================================
+
+## KEY CONTACTS FOR DATA REQUESTS
+
+STATISTICS CANADA
+- Email: statcan.infostats-infostats.statcan@canada.ca
+- Phone: 1-800-263-1136
+- Web: https://www.statcan.gc.ca/
+
+CMHC (Canada Mortgage and Housing Corporation)
+- Email: cmhc.research@cmhc-schl.gc.ca
+- Phone: 1-800-668-2642
+- Web: https://www.cmhc-schl.gc.ca/
+
+INFRASTRUCTURE CANADA (Department of Housing, Infrastructure & Communities)
+- Email: HHIC.PublicEnquiries-DemandespubliquesSHIC@canada.ca
+- Phone: 1-844-966-6632
+- Web: https://housing-infrastructure.canada.ca/
+
+FEDERATION OF CANADIAN MUNICIPALITIES
+- Email: info@greenmunicipalfund.ca
+- Web: https://greenmunicipalfund.ca/
+
+PARK PEOPLE (Canadian City Parks Report)
+- Web: https://parkpeople.ca/
+- Email: Contact via website
+
+WATERLOO REGION PLANNING
+- Phone: (519) 575-4400
+- Address: 150 Frederick Street, Kitchener, ON N2H 2M4
+- Web: https://www.regionofwaterloo.ca/
+
+CITY OF WATERLOO
+- Phone: (519) 747-8585
+- Web: https://www.waterloo.ca/
+
+================================================================================
+
+## RECOMMENDED DATA DOWNLOAD ORDER
+
+1. START HERE (Free, No Request Needed):
+   - Statistics Canada Tables 38-10-0158-01, 38-10-0022-01 (direct export)
+   - CMHC Housing Market Outlook reports (download PDF)
+   - CMHC Rental Market Report for KCW CMA (download Excel)
+   - Canadian City Parks Report for Kitchener (download PDF)
+   - Infrastructure Canada news releases (save web pages)
+
+2. THEN REQUEST (Email/Portal, Usually Free):
+   - Statistics Canada custom tabulation (Tables by municipality)
+   - CMHC individual municipal housing data (if available)
+   - Infrastructure Canada project list and outcomes
+   - Park People custom city reports (Cambridge, Waterloo)
+
+3. FOLLOW UP (Phone/Email, Local Governments):
+   - Region of Waterloo: parks inventory, capital budgets
+   - Cities and townships: parks master plans, public space strategies
+   - County planning: development patterns, housing data
+
+4. SYNTHESIZE (Internal Analysis):
+   - Compile all data into master spreadsheet
+   - Create comparison tables
+   - Map metrics to placemaking framework
+   - Document gaps and limitations
+
+================================================================================
+
+TOTAL ESTIMATED TIME TO GATHER ALL DATA: 8-16 weeks
+ESTIMATED COST: $100-500 (mostly free, optional Statistics Canada custom requests)
+
+================================================================================
+
+Last Updated: January 2026
+For updates on federal datasets, monitor:
+- Statistics Canada monthly releases: https://www.statcan.gc.ca/eng/news
+- CMHC quarterly outlook reports
+- Infrastructure Canada announcements: https://housing-infrastructure.canada.ca/
+
+================================================================================
