@@ -13,12 +13,12 @@ Before running the system, make sure to create a `.env` file **at the same direc
 
 The `.env` file should contain your API keys and tracing flag:
 
-```env
+```env 
 ANTHROPIC_API_KEY=""
 TAVILY_API_KEY=""
 LANGSMITH_API_KEY=""
 LANGSMITH_TRACING=true
-
+```
 ---
 
 ## 🚀 Overview
