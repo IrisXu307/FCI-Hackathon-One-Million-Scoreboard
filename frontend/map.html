@@ -14,6 +14,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="map.html">Map</a>
+      <a href="scoreboard.html">Scoreboard</a>
     </nav>
   </header>
 
@@ -24,21 +25,29 @@
       <label for="categorySelect">Category</label>
       <select id="categorySelect">
         <option value="housing">Housing</option>
-        <option value="transit">Transit</option>
-        <option value="economy">Economy</option>
+        <option value="transportation">Transportation</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="employment">Employment &amp; Jobs</option>
+        <option value="placemaking" disabled>Placemaking &amp; Livability (coming soon)</option>
+      </select>
+
+      <label for="yearSelect">Year</label>
+      <select id="yearSelect">
+        <option value="all">All Years</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2031">2031</option>
       </select>
 
       <label for="metricSelect">Metric</label>
-      <select id="metricSelect">
-        <option value="density">Density</option>
-        <option value="price">Price</option>
-      </select>
+      <select id="metricSelect"></select>
 
       <button onclick="updateMap()">Update Map</button>
 
       <div class="metric-info">
-        <h3>Details</h3>
-        <p id="metricDetails">Loading boundaries…</p>
+        <h3 id="metricLabel">Details</h3>
+        <div id="metricDetails">Loading boundaries…</div>
       </div>
     </div>
 
@@ -51,6 +60,270 @@
     </div>
   </div>
 
+  <footer class="site-footer">
+    <details class="footer-details">
+      <summary class="footer-summary">Data Sources</summary>
+      <div class="footer-inner">
+        <ul class="footer-sources">
+          <li>Statistics Canada — Census 2021; 2024 Population Estimates; Labour Force Survey; Commuting Flow Data</li>
+          <li>CMHC — Housing Starts &amp; Completions Survey 2024–2025; Rental Market Reports</li>
+          <li>Region of Waterloo — Official Plan 2024; Year-end Population &amp; Household Estimates; Housing Affordability Fact Sheet; 2024 Point-in-Time Count; Transit budget &amp; performance data</li>
+          <li>Grand River Transit — Service data, ridership statistics, performance metrics</li>
+          <li>City of Kitchener — Growth Management Strategy Annual Monitoring Report 2024; Housing Pledge 2023</li>
+          <li>City of Cambridge — Building Permit &amp; Development Data 2024; Transit integration plans</li>
+          <li>City of Waterloo — Housing Needs Assessment 2025; Official Plan; Transportation plans</li>
+          <li>Transport Canada — Transportation emissions and modal share data</li>
+          <li>Ontario Ministry of Transportation — GO Transit expansion; highway infrastructure</li>
+          <li>Ontario's 1 Million Homes Plan — provincial housing supply targets</li>
+          <li>Statistics Canada — Labour Force Survey (2020–2024)</li>
+          <li>Region of Waterloo — Workplace Count Survey 2024</li>
+          <li>Ontario Financial Accountability Office — Labour Market Report 2024</li>
+          <li>Watson &amp; Associates — Population &amp; Employment Forecast Report 2025</li>
+          <li>Waterloo Economic Development Corporation — Annual Report 2024</li>
+          <li>Workforce Planning Board — EmployerOne Surveys</li>
+        </ul>
+      </div>
+    </details>
+    <p class="footer-note">* Projected estimate based on official plans and observed trends. This dashboard is produced for the FCI Hackathon 2026.</p>
+  </footer>
+
+  <script>
+    // Metric options grouped by category and annotated with applicable years
+    const METRIC_OPTIONS = {
+      housing: [
+        { group: 'Context', options: [
+          { value: 'density', label: 'Population Density', years: ['all'] },
+          { value: 'price',   label: 'Avg. Housing Price',  years: ['all'] }
+        ]},
+        { group: 'Supply (2024)', options: [
+          { value: 'unitsApproved2024',  label: 'Units Approved',   years: ['all', '2024'] },
+          { value: 'housingStarts2024',  label: 'Housing Starts',   years: ['all', '2024'] },
+          { value: 'unitsCompleted2024', label: 'Units Completed',  years: ['all', '2024'] },
+          { value: 'rentalUnits2024',    label: 'New Rental Units', years: ['all', '2024'] }
+        ]},
+        { group: 'Demand (2023)', options: [
+          { value: 'populationGrowthRate2023', label: 'Population Growth Rate', years: ['all', '2023'] },
+          { value: 'temporaryStudents2023',    label: 'Temporary Students',     years: ['all', '2023'] },
+          { value: 'totalHouseholds2023',      label: 'Total Households',       years: ['all', '2023'] }
+        ]},
+        { group: 'Affordability (2025)', options: [
+          { value: 'medianHomePrice2025',     label: 'Median Home Price',            years: ['all', '2025'] },
+          { value: 'priceToIncomeRatio2025',  label: 'Price-to-Income Ratio',        years: ['all', '2025'] },
+          { value: 'averageRent2025',         label: 'Average Rent',                 years: ['all', '2025'] },
+          { value: 'rentBurden2025',          label: 'Rent Burden',                  years: ['all', '2025'] },
+          { value: 'rentalVacancyRate2025',   label: 'Rental Vacancy Rate',          years: ['all', '2025'] },
+          { value: 'coreHousingNeed2025',     label: 'Core Housing Need',            years: ['all', '2025'] },
+          { value: 'subsidizedWaitlist2025',  label: 'Subsidized Housing Waitlist',  years: ['all', '2025'] }
+        ]},
+        { group: 'Urban Form (2025)', options: [
+          { value: 'intensificationPct2025',    label: 'Intensification Rate',        years: ['all', '2025'] },
+          { value: 'transitOrientedUnits2025',  label: 'Transit-Oriented Dev. Units', years: ['all', '2025'] },
+          { value: 'multiUnitPermits2025',      label: 'Multi-Unit Permits',          years: ['all', '2025'] },
+          { value: 'majorTransitAreas2025',     label: 'Major Transit Station Areas', years: ['all', '2025'] }
+        ]},
+        { group: 'Stability (2025)', options: [
+          { value: 'homelessness2025',           label: 'People Experiencing Homelessness', years: ['all', '2025'] },
+          { value: 'chronicHomeless2025',        label: 'Chronic Homelessness',             years: ['all', '2025'] },
+          { value: 'livingRough2025',            label: 'Living Rough',                     years: ['all', '2025'] },
+          { value: 'shelterBeds2025',            label: 'Shelter Beds Available',           years: ['all', '2025'] },
+          { value: 'supportiveHousingUnits2025', label: 'Supportive Housing Units',         years: ['all', '2025'] }
+        ]},
+        { group: 'Targets (2031)', options: [
+          { value: 'housingTarget2031', label: 'Provincial Housing Target', years: ['all', '2031'] }
+        ]}
+      ],
+      transportation: [
+        { group: 'Demand', options: [
+          { value: 'ridershipAnnual2025',     label: 'Annual Ridership (2025)',      years: ['all', '2025'] },
+          { value: 'vehicleCommuteShare2025', label: 'Vehicle Commute Share (2025)', years: ['all', '2025'] },
+          { value: 'ridershipAnnual2024',     label: 'Annual Ridership (2024)',      years: ['all', '2024'] },
+          { value: 'vehicleCommuteShare2024', label: 'Vehicle Commute Share (2024)', years: ['all', '2024'] },
+          { value: 'ridershipAnnual2023',     label: 'Annual Ridership (2023)',      years: ['all', '2023'] },
+          { value: 'vehicleCommuteShare2023', label: 'Vehicle Commute Share (2023)', years: ['all', '2023'] }
+        ]},
+        { group: 'Accessibility', options: [
+          { value: 'transitCoverage2025',  label: 'Pop. Within 500m of Transit (2025)', years: ['all', '2025'] },
+          { value: 'walkabilityScore2025', label: 'Walkability Score (2025)',            years: ['all', '2025'] },
+          { value: 'transitCoverage2024',  label: 'Pop. Within 500m of Transit (2024)', years: ['all', '2024'] },
+          { value: 'walkabilityScore2024', label: 'Walkability Score (2024)',            years: ['all', '2024'] },
+          { value: 'transitCoverage2023',  label: 'Pop. Within 500m of Transit (2023)', years: ['all', '2023'] },
+          { value: 'walkabilityScore2023', label: 'Walkability Score (2023)',            years: ['all', '2023'] }
+        ]},
+        { group: 'Efficiency', options: [
+          { value: 'commuteMins2025',       label: 'Avg. Commute Time (2025)',   years: ['all', '2025'] },
+          { value: 'congestionIndex2025',   label: 'Congestion Index (2025)',    years: ['all', '2025'] },
+          { value: 'onTimePerformance2025', label: 'On-Time Performance (2025)', years: ['all', '2025'] },
+          { value: 'commuteMins2024',       label: 'Avg. Commute Time (2024)',   years: ['all', '2024'] },
+          { value: 'congestionIndex2024',   label: 'Congestion Index (2024)',    years: ['all', '2024'] },
+          { value: 'onTimePerformance2024', label: 'On-Time Performance (2024)', years: ['all', '2024'] },
+          { value: 'commuteMins2023',       label: 'Avg. Commute Time (2023)',   years: ['all', '2023'] },
+          { value: 'congestionIndex2023',   label: 'Congestion Index (2023)',    years: ['all', '2023'] },
+          { value: 'onTimePerformance2023', label: 'On-Time Performance (2023)', years: ['all', '2023'] }
+        ]},
+        { group: 'Sustainability', options: [
+          { value: 'transportEmissions2025', label: 'Transport Emissions (2025)', years: ['all', '2025'] },
+          { value: 'evAdoption2025',         label: 'EV Adoption Rate (2025)',    years: ['all', '2025'] },
+          { value: 'transitModalShare2025',  label: 'Transit Modal Share (2025)', years: ['all', '2025'] },
+          { value: 'transportEmissions2024', label: 'Transport Emissions (2024)', years: ['all', '2024'] },
+          { value: 'evAdoption2024',         label: 'EV Adoption Rate (2024)',    years: ['all', '2024'] },
+          { value: 'transitModalShare2024',  label: 'Transit Modal Share (2024)', years: ['all', '2024'] },
+          { value: 'transportEmissions2023', label: 'Transport Emissions (2023)', years: ['all', '2023'] },
+          { value: 'evAdoption2023',         label: 'EV Adoption Rate (2023)',    years: ['all', '2023'] },
+          { value: 'transitModalShare2023',  label: 'Transit Modal Share (2023)', years: ['all', '2023'] }
+        ]}
+      ],
+      healthcare: [
+        { group: 'Capacity', options: [
+          { value: 'bedsPer1k2025',    label: 'Hospital Beds per 1k (2025)',    years: ['all', '2025'] },
+          { value: 'clinicsPer1k2025', label: 'Clinics per 1k (2025)',          years: ['all', '2025'] },
+          { value: 'bedsPer1k2024',    label: 'Hospital Beds per 1k (2024)',    years: ['all', '2024'] },
+          { value: 'clinicsPer1k2024', label: 'Clinics per 1k (2024)',          years: ['all', '2024'] },
+          { value: 'bedsPer1k2023',    label: 'Hospital Beds per 1k (2023)',    years: ['all', '2023'] },
+          { value: 'clinicsPer1k2023', label: 'Clinics per 1k (2023)',          years: ['all', '2023'] }
+        ]},
+        { group: 'Demand', options: [
+          { value: 'erVisits2025',    label: 'ER Visits per Capita (2025)',  years: ['all', '2025'] },
+          { value: 'aging65Plus2025', label: 'Population Aged 65+ (2025)',   years: ['all', '2025'] },
+          { value: 'erVisits2024',    label: 'ER Visits per Capita (2024)',  years: ['all', '2024'] },
+          { value: 'aging65Plus2024', label: 'Population Aged 65+ (2024)',   years: ['all', '2024'] },
+          { value: 'erVisits2023',    label: 'ER Visits per Capita (2023)',  years: ['all', '2023'] },
+          { value: 'aging65Plus2023', label: 'Population Aged 65+ (2023)',   years: ['all', '2023'] }
+        ]},
+        { group: 'Access', options: [
+          { value: 'waitTimes2025',      label: 'Specialist Wait Time (2025)',          years: ['all', '2025'] },
+          { value: 'familyDrAccess2025', label: 'Population with Family Doctor (2025)', years: ['all', '2025'] },
+          { value: 'serviceAvail2025',   label: 'Service Availability Score (2025)',    years: ['all', '2025'] },
+          { value: 'waitTimes2024',      label: 'Specialist Wait Time (2024)',          years: ['all', '2024'] },
+          { value: 'familyDrAccess2024', label: 'Population with Family Doctor (2024)', years: ['all', '2024'] },
+          { value: 'serviceAvail2024',   label: 'Service Availability Score (2024)',    years: ['all', '2024'] },
+          { value: 'waitTimes2023',      label: 'Specialist Wait Time (2023)',          years: ['all', '2023'] },
+          { value: 'familyDrAccess2023', label: 'Population with Family Doctor (2023)', years: ['all', '2023'] },
+          { value: 'serviceAvail2023',   label: 'Service Availability Score (2023)',    years: ['all', '2023'] }
+        ]},
+        { group: 'Workforce', options: [
+          { value: 'doctorsPer1k2025',       label: 'Physicians per 1k (2025)',          years: ['all', '2025'] },
+          { value: 'nursesPer1k2025',        label: 'Nurses per 1k (2025)',              years: ['all', '2025'] },
+          { value: 'healthWorkersPer1k2025', label: 'Healthcare Workers per 1k (2025)', years: ['all', '2025'] },
+          { value: 'doctorsPer1k2024',       label: 'Physicians per 1k (2024)',          years: ['all', '2024'] },
+          { value: 'nursesPer1k2024',        label: 'Nurses per 1k (2024)',              years: ['all', '2024'] },
+          { value: 'healthWorkersPer1k2024', label: 'Healthcare Workers per 1k (2024)', years: ['all', '2024'] },
+          { value: 'doctorsPer1k2023',       label: 'Physicians per 1k (2023)',          years: ['all', '2023'] },
+          { value: 'nursesPer1k2023',        label: 'Nurses per 1k (2023)',              years: ['all', '2023'] },
+          { value: 'healthWorkersPer1k2023', label: 'Healthcare Workers per 1k (2023)', years: ['all', '2023'] }
+        ]},
+        { group: 'Outcomes', options: [
+          { value: 'lifeExpectancy2025', label: 'Life Expectancy (2025)',              years: ['all', '2025'] },
+          { value: 'prevHosp2025',       label: 'Preventable Hospitalizations (2025)', years: ['all', '2025'] },
+          { value: 'healthScore2025',    label: 'Health Outcomes Score (2025)',        years: ['all', '2025'] },
+          { value: 'lifeExpectancy2024', label: 'Life Expectancy (2024)',              years: ['all', '2024'] },
+          { value: 'prevHosp2024',       label: 'Preventable Hospitalizations (2024)', years: ['all', '2024'] },
+          { value: 'healthScore2024',    label: 'Health Outcomes Score (2024)',        years: ['all', '2024'] },
+          { value: 'lifeExpectancy2023', label: 'Life Expectancy (2023)',              years: ['all', '2023'] },
+          { value: 'prevHosp2023',       label: 'Preventable Hospitalizations (2023)', years: ['all', '2023'] },
+          { value: 'healthScore2023',    label: 'Health Outcomes Score (2023)',        years: ['all', '2023'] }
+        ]}
+      ],
+      employment: [
+        { group: 'Supply', options: [
+          { value: 'totalJobs2025',  label: 'Total Jobs (2025)',       years: ['all', '2025'] },
+          { value: 'jobGrowth2025',  label: 'Job Growth Rate (2025)',  years: ['all', '2025'] },
+          { value: 'totalJobs2024',  label: 'Total Jobs (2024)',       years: ['all', '2024'] },
+          { value: 'jobGrowth2024',  label: 'Job Growth Rate (2024)',  years: ['all', '2024'] },
+          { value: 'totalJobs2023',  label: 'Total Jobs (2023)',       years: ['all', '2023'] },
+          { value: 'jobGrowth2023',  label: 'Job Growth Rate (2023)',  years: ['all', '2023'] }
+        ]},
+        { group: 'Workforce', options: [
+          { value: 'lfp2025',   label: 'Labour Force Participation (2025)', years: ['all', '2025'] },
+          { value: 'unemp2025', label: 'Unemployment Rate (2025)',          years: ['all', '2025'] },
+          { value: 'lfp2024',   label: 'Labour Force Participation (2024)', years: ['all', '2024'] },
+          { value: 'unemp2024', label: 'Unemployment Rate (2024)',          years: ['all', '2024'] },
+          { value: 'lfp2023',   label: 'Labour Force Participation (2023)', years: ['all', '2023'] },
+          { value: 'unemp2023', label: 'Unemployment Rate (2023)',          years: ['all', '2023'] }
+        ]},
+        { group: 'Income', options: [
+          { value: 'income2025',     label: 'Median Household Income (2025)', years: ['all', '2025'] },
+          { value: 'wageGrowth2025', label: 'Wage Growth (2025)',             years: ['all', '2025'] },
+          { value: 'inequality2025', label: 'Income Inequality (2025)',        years: ['all', '2025'] },
+          { value: 'income2024',     label: 'Median Household Income (2024)', years: ['all', '2024'] },
+          { value: 'wageGrowth2024', label: 'Wage Growth (2024)',             years: ['all', '2024'] },
+          { value: 'inequality2024', label: 'Income Inequality (2024)',        years: ['all', '2024'] },
+          { value: 'income2023',     label: 'Median Household Income (2023)', years: ['all', '2023'] },
+          { value: 'wageGrowth2023', label: 'Wage Growth (2023)',             years: ['all', '2023'] },
+          { value: 'inequality2023', label: 'Income Inequality (2023)',        years: ['all', '2023'] }
+        ]},
+        { group: 'Industry', options: [
+          { value: 'diversity2025', label: 'Sector Diversity Score (2025)', years: ['all', '2025'] },
+          { value: 'diversity2024', label: 'Sector Diversity Score (2024)', years: ['all', '2024'] },
+          { value: 'diversity2023', label: 'Sector Diversity Score (2023)', years: ['all', '2023'] }
+        ]},
+        { group: 'Stability', options: [
+          { value: 'retention2025',  label: 'Job Retention Rate (2025)',        years: ['all', '2025'] },
+          { value: 'layoffs2025',    label: 'Layoff Rate (2025)',               years: ['all', '2025'] },
+          { value: 'resilience2025', label: 'Economic Resilience Score (2025)', years: ['all', '2025'] },
+          { value: 'retention2024',  label: 'Job Retention Rate (2024)',        years: ['all', '2024'] },
+          { value: 'layoffs2024',    label: 'Layoff Rate (2024)',               years: ['all', '2024'] },
+          { value: 'resilience2024', label: 'Economic Resilience Score (2024)', years: ['all', '2024'] },
+          { value: 'retention2023',  label: 'Job Retention Rate (2023)',        years: ['all', '2023'] },
+          { value: 'layoffs2023',    label: 'Layoff Rate (2023)',               years: ['all', '2023'] },
+          { value: 'resilience2023', label: 'Economic Resilience Score (2023)', years: ['all', '2023'] }
+        ]}
+      ]
+    };
+
+    function rebuildMetricSelect() {
+      const category = document.getElementById('categorySelect').value;
+      const yearSel  = document.getElementById('yearSelect');
+      const sel      = document.getElementById('metricSelect');
+
+      // Determine which years actually have metrics for this category
+      const categoryOpts = METRIC_OPTIONS[category] || [];
+      const availableYears = new Set();
+      categoryOpts.forEach(group => group.options.forEach(o => o.years.forEach(y => availableYears.add(y))));
+
+      // Disable year options that have no metrics for this category
+      Array.from(yearSel.options).forEach(opt => {
+        opt.disabled = !availableYears.has(opt.value);
+      });
+
+      // If the selected year is now disabled, fall back to 'all'
+      if (yearSel.options[yearSel.selectedIndex]?.disabled) {
+        yearSel.value = 'all';
+      }
+
+      const year = yearSel.value;
+      sel.innerHTML = '';
+
+      categoryOpts.forEach(group => {
+        const opts = group.options.filter(o => o.years.includes(year));
+        if (!opts.length) return;
+        const og = document.createElement('optgroup');
+        og.label = group.group;
+        opts.forEach(o => {
+          const opt       = document.createElement('option');
+          opt.value       = o.value;
+          opt.textContent = o.label;
+          og.appendChild(opt);
+        });
+        sel.appendChild(og);
+      });
+
+      // Only update the map once boundaries have been fetched (map.js sets fetchedFeatures)
+      if (typeof updateMap === 'function' && typeof fetchedFeatures !== 'undefined' && fetchedFeatures && sel.value) {
+        updateMap();
+      }
+    }
+
+    document.getElementById('categorySelect').addEventListener('change', rebuildMetricSelect);
+    document.getElementById('yearSelect').addEventListener('change', rebuildMetricSelect);
+
+    // Pre-populate the select on page load (map not yet ready, so updateMap won't be called)
+    rebuildMetricSelect();
+  </script>
+  <script src="db/housing.js"></script>
+  <script src="db/transportation.js"></script>
+  <script src="db/healthcare.js"></script>
+  <script src="db/employment.js"></script>
+  <script src="db/placemaking.js"></script>
   <script src="data.js"></script>
   <script src="map.js"></script>
 </body>

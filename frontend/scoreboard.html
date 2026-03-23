@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vision One Million Dashboard</title>
+  <title>Scoreboard · Vision One Million</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,22 +16,25 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <p class="hero-eyebrow">Waterloo Region · Ontario, Canada</p>
-    <h2>Regional Readiness<br>Scorecard</h2>
-    <p>Track progress across housing, transportation, healthcare, employment, and placemaking as Waterloo Region grows toward one million residents.</p>
-    <a href="map.html" class="btn">Explore Map →</a>
-  </section>
-
-  <nav class="category-tabs">
-    <button class="tab active" data-category="housing">Housing</button>
-    <button class="tab" data-category="transportation">Transportation</button>
-    <button class="tab" data-category="healthcare">Healthcare</button>
-    <button class="tab" data-category="employment">Employment &amp; Jobs</button>
-    <button class="tab" data-category="placemaking">Placemaking &amp; Livability</button>
-  </nav>
-
-  <main id="categoryContent" class="category-content"></main>
+  <div class="scoreboard-page">
+    <div class="scoreboard-header">
+      <div class="scoreboard-header-text">
+        <h2>Municipal Scoreboard</h2>
+        <p class="scoreboard-desc">Side-by-side comparison of housing, transportation, healthcare, and employment metrics across Waterloo Region municipalities. Cells are colour-ranked among the four cities — green = best performer, red = most challenged. The <strong>Waterloo Region</strong> column shows the regional aggregate and is not ranked.</p>
+      </div>
+      <div class="export-bar">
+        <span class="export-label">Export:</span>
+        <button class="export-btn" onclick="exportCSV()">CSV</button>
+        <button class="export-btn" onclick="exportJSON()">JSON</button>
+      </div>
+    </div>
+    <div class="scoreboard-wrap">
+      <table class="scoreboard-table">
+        <thead id="scoreboardHead"></thead>
+        <tbody id="scoreboardBody"></tbody>
+      </table>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <details class="footer-details">
@@ -48,6 +51,8 @@
           <li>Transport Canada — Transportation emissions and modal share data</li>
           <li>Ontario Ministry of Transportation — GO Transit expansion; highway infrastructure</li>
           <li>Ontario's 1 Million Homes Plan — provincial housing supply targets</li>
+          <li>Ontario Ministry of Health — Healthcare wait times, workforce, and outcomes data</li>
+          <li>Grand River Hospital / St. Mary's General Hospital / Cambridge Memorial Hospital — Capacity and outcomes data</li>
           <li>Statistics Canada — Labour Force Survey (2020–2024)</li>
           <li>Region of Waterloo — Workplace Count Survey 2024</li>
           <li>Ontario Financial Accountability Office — Labour Market Report 2024</li>
@@ -60,16 +65,8 @@
     <p class="footer-note">* Projected estimate based on official plans and observed trends. This dashboard is produced for the FCI Hackathon 2026.</p>
   </footer>
 
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <!-- Category databases -->
-  <script src="db/housing.js"></script>
-  <script src="db/transportation.js"></script>
-  <script src="db/healthcare.js"></script>
-  <script src="db/employment.js"></script>
-  <script src="db/placemaking.js"></script>
-  <!-- Orchestrator + renderer -->
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+  <script src="db/scoreboard.js"></script>
+  <script src="scoreboard.js"></script>
+  <script src="scoreboard-export.js"></script>
 </body>
 </html>
