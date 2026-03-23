@@ -7,6 +7,20 @@ Built with **LangChain**, this system leverages an **agentic architecture** to c
 
 ---
 
+## ⚠️ Environment Setup
+
+Before running the system, make sure to create a `.env` file **at the same directory level as `langgraph.json`**.  
+
+The `.env` file should contain your API keys and tracing flag:
+
+```env
+ANTHROPIC_API_KEY=""
+TAVILY_API_KEY=""
+LANGSMITH_API_KEY=""
+LANGSMITH_TRACING=true
+
+---
+
 ## 🚀 Overview
 
 The **One Million Scoreboard** is designed to solve a core problem:
