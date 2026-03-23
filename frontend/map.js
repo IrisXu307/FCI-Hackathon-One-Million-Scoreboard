@@ -170,18 +170,28 @@ const metaConfig = {
     colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b']
   },
   // Transportation metrics
+  transitRoutes2025: { label: 'Transit Routes (2025)', format: v => v != null ? `${v} routes` : 'No data', thresholds: [20, 30, 40], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  transitRoutes2024: { label: 'Transit Routes (2024)', format: v => v != null ? `${v} routes` : 'No data', thresholds: [18, 28, 38], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  transitRoutes2023: { label: 'Transit Routes (2023)', format: v => v != null ? `${v} routes` : 'No data', thresholds: [16, 26, 36], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  serviceHoursAnnual2025: { label: 'Annual Service Hours (2025)', format: v => v != null ? `${(v/1000).toFixed(0)}k hrs` : 'No data', thresholds: [200000, 400000, 700000], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  serviceHoursAnnual2024: { label: 'Annual Service Hours (2024)', format: v => v != null ? `${(v/1000).toFixed(0)}k hrs` : 'No data', thresholds: [180000, 380000, 670000], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  serviceHoursAnnual2023: { label: 'Annual Service Hours (2023)', format: v => v != null ? `${(v/1000).toFixed(0)}k hrs` : 'No data', thresholds: [160000, 350000, 630000], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  busFleetSize2025: { label: 'Bus Fleet Size (2025)', format: v => v != null ? `${v} buses` : 'No data', thresholds: [100, 200, 300], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  busFleetSize2024: { label: 'Bus Fleet Size (2024)', format: v => v != null ? `${v} buses` : 'No data', thresholds: [90, 190, 280], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  busFleetSize2023: { label: 'Bus Fleet Size (2023)', format: v => v != null ? `${v} buses` : 'No data', thresholds: [80, 180, 260], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  lrtStations2025: { label: 'LRT Stations (2025)', format: v => v != null ? `${v} stations` : 'No data', thresholds: [5, 12, 18], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
   ridershipAnnual2025: {
     label: 'Annual Ridership (2025)',
-    format: v => v != null ? `${(v/1000000).toFixed(1)}M trips` : 'No data',
-    thresholds: [1000000, 5000000, 15000000],
+    format: v => v != null ? `${v.toFixed(1)}M trips` : 'No data',
+    thresholds: [1, 5, 15],
     colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b']
   },
-  vehicleCommuteShare2025: {
-    label: 'Vehicle Commute Share (2025)',
-    format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [73, 78, 85],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
+  lrtRidership2025: { label: 'LRT Ridership (2025)', format: v => v != null ? `${v.toFixed(1)}M trips` : 'No data', thresholds: [0.5, 2, 5], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  lrtRidership2024: { label: 'LRT Ridership (2024)', format: v => v != null ? `${v.toFixed(1)}M trips` : 'No data', thresholds: [0.5, 2, 5], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  lrtRidership2023: { label: 'LRT Ridership (2023)', format: v => v != null ? `${v.toFixed(1)}M trips` : 'No data', thresholds: [0.5, 2, 5], colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b'] },
+  transitUsers2025: { label: '% Using Transit (2025)', format: v => v != null ? `${v}%` : 'No data', thresholds: [5, 12, 20], colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c'] },
+  transitUsers2024: { label: '% Using Transit (2024)', format: v => v != null ? `${v}%` : 'No data', thresholds: [5, 12, 20], colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c'] },
+  transitUsers2023: { label: '% Using Transit (2023)', format: v => v != null ? `${v}%` : 'No data', thresholds: [5, 12, 20], colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c'] },
   transitCoverage2025: {
     label: 'Pop. Within 500m of Transit (2025)',
     format: v => v != null ? `${v}%` : 'No data',
@@ -200,12 +210,13 @@ const metaConfig = {
     thresholds: [20, 25, 33],
     colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
   },
-  congestionIndex2025: {
-    label: 'Congestion Index (2025)',
-    format: v => v != null ? `${v}` : 'No data',
-    thresholds: [1.05, 1.15, 1.30],
+  serviceFrequency2025: {
+    label: 'Peak Service Frequency (2025)',
+    format: v => v != null ? `${v} min` : 'No data',
+    thresholds: [6, 10, 20],
     colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
   },
+  mobilityPlusTrips2025: { label: 'Mobility+ Trips (2025)', format: v => v != null ? `${(v/1000).toFixed(0)}k trips` : 'No data', thresholds: [30000, 80000, 150000], colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c'] },
   onTimePerformance2025: {
     label: 'On-Time Performance (2025)',
     format: v => v != null ? `${v}%` : 'No data',
@@ -215,34 +226,30 @@ const metaConfig = {
   transportEmissions2025: {
     label: 'Transport Emissions (2025)',
     format: v => v != null ? `${(v/1000).toFixed(0)}k t CO₂` : 'No data',
-    thresholds: [100000, 200000, 350000],
+    thresholds: [50000, 150000, 400000],
     colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
   },
   evAdoption2025: {
     label: 'EV Adoption Rate (2025)',
     format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [3, 4, 5.5],
+    thresholds: [5, 9, 14],
     colors: ['#feedde', '#fdbe85', '#fd8d3c', '#3fb950']
   },
   transitModalShare2025: {
     label: 'Transit Modal Share (2025)',
     format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [7, 12, 16],
+    thresholds: [8, 13, 18],
     colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b']
   },
   // Transportation 2023 actuals
   ridershipAnnual2023: {
     label: 'Annual Ridership (2023)',
-    format: v => v != null ? `${(v/1000000).toFixed(1)}M trips` : 'No data',
-    thresholds: [800000, 4000000, 12000000],
+    format: v => v != null ? `${v.toFixed(1)}M trips` : 'No data',
+    thresholds: [1, 5, 15],
     colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b']
   },
-  vehicleCommuteShare2023: {
-    label: 'Vehicle Commute Share (2023)',
-    format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [74, 80, 87],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
+  mobilityPlusTrips2023: { label: 'Mobility+ Trips (2023)', format: v => v != null ? `${v.toLocaleString()} trips` : 'No data', thresholds: [5000, 15000, 30000], colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c'] },
+  serviceFrequency2023: { label: 'Peak Service Frequency (2023)', format: v => v != null ? `${v} min` : 'No data', thresholds: [8, 15, 25], colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701'] },
   transitCoverage2023: {
     label: 'Pop. Within 500m of Transit (2023)',
     format: v => v != null ? `${v}%` : 'No data',
@@ -261,10 +268,10 @@ const metaConfig = {
     thresholds: [20, 25, 35],
     colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
   },
-  congestionIndex2023: {
-    label: 'Congestion Index (2023)',
-    format: v => v != null ? `${v}` : 'No data',
-    thresholds: [1.08, 1.20, 1.35],
+  serviceFrequency2023: {
+    label: 'Peak Service Frequency (2023)',
+    format: v => v != null ? `${v} min` : 'No data',
+    thresholds: [6, 10, 20],
     colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
   },
   onTimePerformance2023: {
@@ -294,16 +301,11 @@ const metaConfig = {
   // Transportation 2024 actuals
   ridershipAnnual2024: {
     label: 'Annual Ridership (2024)',
-    format: v => v != null ? `${(v/1000000).toFixed(1)}M trips` : 'No data',
-    thresholds: [1000000, 5000000, 15000000],
+    format: v => v != null ? `${v.toFixed(1)}M trips` : 'No data',
+    thresholds: [1, 5, 15],
     colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b']
   },
-  vehicleCommuteShare2024: {
-    label: 'Vehicle Commute Share (2024)',
-    format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [74, 80, 87],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
+  mobilityPlusTrips2024: { label: 'Mobility+ Trips (2024)', format: v => v != null ? `${(v/1000).toFixed(0)}k trips` : 'No data', thresholds: [30000, 80000, 150000], colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c'] },
   transitCoverage2024: {
     label: 'Pop. Within 500m of Transit (2024)',
     format: v => v != null ? `${v}%` : 'No data',
@@ -322,10 +324,10 @@ const metaConfig = {
     thresholds: [20, 25, 35],
     colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
   },
-  congestionIndex2024: {
-    label: 'Congestion Index (2024)',
-    format: v => v != null ? `${v}` : 'No data',
-    thresholds: [1.08, 1.20, 1.35],
+  serviceFrequency2024: {
+    label: 'Peak Service Frequency (2024)',
+    format: v => v != null ? `${v} min` : 'No data',
+    thresholds: [6, 10, 20],
     colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
   },
   onTimePerformance2024: {
@@ -337,7 +339,7 @@ const metaConfig = {
   transportEmissions2024: {
     label: 'Transport Emissions (2024)',
     format: v => v != null ? `${(v/1000).toFixed(0)}k t CO₂` : 'No data',
-    thresholds: [100000, 200000, 370000],
+    thresholds: [50000, 150000, 400000],
     colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
   },
   evAdoption2024: {
@@ -353,242 +355,47 @@ const metaConfig = {
     colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b']
   },
   // Healthcare 2023 actuals
-  bedsPer1k2023: {
-    label: 'Hospital Beds per 1,000 (2023)',
-    format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',
-    thresholds: [0.5, 1.2, 2.0],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  clinicsPer1k2023: {
-    label: 'Clinics per 1,000 (2023)',
-    format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',
-    thresholds: [0.07, 0.15, 0.22],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  erVisits2023: {
-    label: 'ER Visits per Capita (2023)',
-    format: v => v != null ? `${v.toFixed(2)} / person` : 'No data',
-    thresholds: [0.28, 0.45, 0.57],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
-  aging65Plus2023: {
-    label: 'Population Aged 65+ (2023)',
-    format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [17, 20, 23],
-    colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b']
-  },
-  waitTimes2023: {
-    label: 'Specialist Wait Time (2023)',
-    format: v => v != null ? `${v} wks` : 'No data',
-    thresholds: [18, 20, 22],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
-  familyDrAccess2023: {
-    label: 'Population with Family Doctor (2023)',
-    format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [84, 88, 91],
-    colors: ['#feedde', '#fdbe85', '#fd8d3c', '#3fb950']
-  },
-  serviceAvail2023: {
-    label: 'Service Availability Score (2023)',
-    format: v => v != null ? `${v} / 10` : 'No data',
-    thresholds: [5.5, 7.0, 8.0],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  doctorsPer1k2023: {
-    label: 'Physicians per 1,000 (2023)',
-    format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',
-    thresholds: [0.8, 1.5, 2.1],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  nursesPer1k2023: {
-    label: 'Nurses per 1,000 (2023)',
-    format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data',
-    thresholds: [3.5, 5.5, 7.5],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  healthWorkersPer1k2023: {
-    label: 'Healthcare Workers per 1,000 (2023)',
-    format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data',
-    thresholds: [7, 10, 14],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  lifeExpectancy2023: {
-    label: 'Life Expectancy (2023)',
-    format: v => v != null ? `${v.toFixed(1)} yrs` : 'No data',
-    thresholds: [82.0, 82.8, 83.5],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  prevHosp2023: {
-    label: 'Preventable Hospitalizations per Capita (2023)',
-    format: v => v != null ? `${v.toFixed(3)}` : 'No data',
-    thresholds: [0.021, 0.027, 0.033],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
-  healthScore2023: {
-    label: 'Health Outcomes Score (2023)',
-    format: v => v != null ? `${v.toFixed(1)} / 10` : 'No data',
-    thresholds: [6.6, 7.7, 8.4],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
+  bedsPer1k2023:       { label: 'Hospital Beds per 1,000 (2023)',          format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',       thresholds: [0.8, 1.5, 2.2],   colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  facilitiesCount2023: { label: 'Healthcare Facilities (2023)',             format: v => v != null ? `${v} facilities` : 'No data',           thresholds: [20, 60, 90],      colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  erVisits2023:        { label: 'ER Visits Annual (2023)',                  format: v => v != null ? `${(v/1000).toFixed(0)}k/yr` : 'No data', thresholds: [5000, 30000, 100000], colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  aging65Plus2023:     { label: 'Population Aged 65+ (2023)',               format: v => v != null ? `${v}%` : 'No data',                      thresholds: [14, 18, 22],      colors: ['#f7fbff','#9ecae1','#3182bd','#08306b'] },
+  waitTimes2023:       { label: 'Specialist Wait Time (2023)',               format: v => v != null ? `${v} wks` : 'No data',                   thresholds: [18, 22, 26],      colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  withoutFamilyDr2023: { label: 'Residents Without Family Doctor (2023)',   format: v => v != null ? `${(v/1000).toFixed(0)}k residents` : 'No data', thresholds: [5000, 20000, 50000], colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  homeCareWait2023:    { label: 'Home Care Wait Days (2023)',               format: v => v != null ? `${v} days` : 'No data',                  thresholds: [20, 35, 50],      colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  doctorsPer1k2023:    { label: 'Physicians per 100k (2023)',               format: v => v != null ? `${v} / 100k` : 'No data',               thresholds: [150, 200, 260],   colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  nursesPer1k2023:     { label: 'Nurses per 1,000 (2023)',                  format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data',      thresholds: [7, 10, 13],       colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  workerShortage2023:  { label: 'Healthcare Worker Shortage (2023)',        format: v => v != null ? `${v.toLocaleString()} workers` : 'No data', thresholds: [200, 600, 1000], colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  lifeExpectancy2023:  { label: 'Life Expectancy (2023)',                   format: v => v != null ? `${v.toFixed(1)} yrs` : 'No data',       thresholds: [81.5, 82.5, 83.5], colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  prevHosp2023:        { label: 'Preventable Hospitalizations per 100k (2023)', format: v => v != null ? `${v} / 100k` : 'No data',           thresholds: [200, 300, 400],   colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  chronicDisease2023:  { label: 'Chronic Disease Burden (2023)',            format: v => v != null ? `${v}%` : 'No data',                     thresholds: [18, 23, 28],      colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
   // Healthcare 2025
-  bedsPer1k2025: {
-    label: 'Hospital Beds per 1,000 (2025)',
-    format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',
-    thresholds: [0.5, 1.2, 2.0],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  clinicsPer1k2025: {
-    label: 'Clinics per 1,000 (2025)',
-    format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',
-    thresholds: [0.07, 0.15, 0.22],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  erVisits2025: {
-    label: 'ER Visits per Capita (2025)',
-    format: v => v != null ? `${v.toFixed(2)} / person` : 'No data',
-    thresholds: [0.35, 0.50, 0.60],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
-  aging65Plus2025: {
-    label: 'Population Aged 65+ (2025)',
-    format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [17, 20, 23],
-    colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b']
-  },
-  waitTimes2025: {
-    label: 'Specialist Wait Time (2025)',
-    format: v => v != null ? `${v} wks` : 'No data',
-    thresholds: [18, 20, 22],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
-  familyDrAccess2025: {
-    label: 'Population with Family Doctor (2025)',
-    format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [84, 88, 91],
-    colors: ['#feedde', '#fdbe85', '#fd8d3c', '#3fb950']
-  },
-  serviceAvail2025: {
-    label: 'Service Availability Score (2025)',
-    format: v => v != null ? `${v} / 10` : 'No data',
-    thresholds: [5.5, 7.0, 8.0],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  doctorsPer1k2025: {
-    label: 'Physicians per 1,000 (2025)',
-    format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',
-    thresholds: [0.8, 1.5, 2.1],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  nursesPer1k2025: {
-    label: 'Nurses per 1,000 (2025)',
-    format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data',
-    thresholds: [3.5, 5.5, 7.5],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  healthWorkersPer1k2025: {
-    label: 'Healthcare Workers per 1,000 (2025)',
-    format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data',
-    thresholds: [7, 10, 14],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  lifeExpectancy2025: {
-    label: 'Life Expectancy (2025)',
-    format: v => v != null ? `${v.toFixed(1)} yrs` : 'No data',
-    thresholds: [82.6, 83.0, 83.6],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  prevHosp2025: {
-    label: 'Preventable Hospitalizations per Capita (2025)',
-    format: v => v != null ? `${v.toFixed(3)}` : 'No data',
-    thresholds: [0.020, 0.026, 0.032],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
-  healthScore2025: {
-    label: 'Health Outcomes Score (2025)',
-    format: v => v != null ? `${v.toFixed(1)} / 10` : 'No data',
-    thresholds: [6.8, 7.8, 8.5],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
+  bedsPer1k2025:       { label: 'Hospital Beds per 1,000 (2025)',          format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',       thresholds: [0.8, 1.5, 2.2],   colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  facilitiesCount2025: { label: 'Healthcare Facilities (2025)',             format: v => v != null ? `${v} facilities` : 'No data',           thresholds: [20, 60, 90],      colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  erVisits2025:        { label: 'ER Visits Annual (2025)',                  format: v => v != null ? `${(v/1000).toFixed(0)}k/yr` : 'No data', thresholds: [5000, 30000, 100000], colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  aging65Plus2025:     { label: 'Population Aged 65+ (2025)',               format: v => v != null ? `${v}%` : 'No data',                      thresholds: [14, 18, 22],      colors: ['#f7fbff','#9ecae1','#3182bd','#08306b'] },
+  waitTimes2025:       { label: 'Specialist Wait Time (2025)',               format: v => v != null ? `${v} wks` : 'No data',                   thresholds: [15, 20, 26],      colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  withoutFamilyDr2025: { label: 'Residents Without Family Doctor (2025)',   format: v => v != null ? `${(v/1000).toFixed(0)}k residents` : 'No data', thresholds: [5000, 20000, 50000], colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  homeCareWait2025:    { label: 'Home Care Wait Days (2025)',               format: v => v != null ? `${v} days` : 'No data',                  thresholds: [20, 35, 50],      colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  doctorsPer1k2025:    { label: 'Physicians per 100k (2025)',               format: v => v != null ? `${v} / 100k` : 'No data',               thresholds: [150, 200, 260],   colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  nursesPer1k2025:     { label: 'Nurses per 1,000 (2025)',                  format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data',      thresholds: [7, 10, 13],       colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  workerShortage2025:  { label: 'Healthcare Worker Shortage (2025)',        format: v => v != null ? `${v.toLocaleString()} workers` : 'No data', thresholds: [200, 600, 1000], colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  lifeExpectancy2025:  { label: 'Life Expectancy (2025)',                   format: v => v != null ? `${v.toFixed(1)} yrs` : 'No data',       thresholds: [81.5, 82.5, 83.5], colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  prevHosp2025:        { label: 'Preventable Hospitalizations per 100k (2025)', format: v => v != null ? `${v} / 100k` : 'No data',           thresholds: [200, 300, 400],   colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  chronicDisease2025:  { label: 'Chronic Disease Burden (2025)',            format: v => v != null ? `${v}%` : 'No data',                     thresholds: [18, 23, 28],      colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
   // Healthcare 2024
-  bedsPer1k2024: {
-    label: 'Hospital Beds per 1,000 (2024)',
-    format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',
-    thresholds: [0.5, 1.2, 2.0],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  clinicsPer1k2024: {
-    label: 'Clinics per 1,000 (2024)',
-    format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',
-    thresholds: [0.07, 0.15, 0.22],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  erVisits2024: {
-    label: 'ER Visits per Capita (2024)',
-    format: v => v != null ? `${v.toFixed(2)} / person` : 'No data',
-    thresholds: [0.32, 0.48, 0.58],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
-  aging65Plus2024: {
-    label: 'Population Aged 65+ (2024)',
-    format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [17, 20, 23],
-    colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b']
-  },
-  waitTimes2024: {
-    label: 'Specialist Wait Time (2024)',
-    format: v => v != null ? `${v} wks` : 'No data',
-    thresholds: [18, 20, 22],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
-  familyDrAccess2024: {
-    label: 'Population with Family Doctor (2024)',
-    format: v => v != null ? `${v}%` : 'No data',
-    thresholds: [84, 88, 91],
-    colors: ['#feedde', '#fdbe85', '#fd8d3c', '#3fb950']
-  },
-  serviceAvail2024: {
-    label: 'Service Availability Score (2024)',
-    format: v => v != null ? `${v} / 10` : 'No data',
-    thresholds: [5.5, 7.0, 8.0],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  doctorsPer1k2024: {
-    label: 'Physicians per 1,000 (2024)',
-    format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',
-    thresholds: [0.8, 1.5, 2.1],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  nursesPer1k2024: {
-    label: 'Nurses per 1,000 (2024)',
-    format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data',
-    thresholds: [3.5, 5.5, 7.5],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  healthWorkersPer1k2024: {
-    label: 'Healthcare Workers per 1,000 (2024)',
-    format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data',
-    thresholds: [7, 10, 14],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  lifeExpectancy2024: {
-    label: 'Life Expectancy (2024)',
-    format: v => v != null ? `${v.toFixed(1)} yrs` : 'No data',
-    thresholds: [82.5, 82.9, 83.5],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
-  prevHosp2024: {
-    label: 'Preventable Hospitalizations per Capita (2024)',
-    format: v => v != null ? `${v.toFixed(3)}` : 'No data',
-    thresholds: [0.021, 0.027, 0.033],
-    colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701']
-  },
-  healthScore2024: {
-    label: 'Health Outcomes Score (2024)',
-    format: v => v != null ? `${v.toFixed(1)} / 10` : 'No data',
-    thresholds: [6.6, 7.7, 8.4],
-    colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  },
+  bedsPer1k2024:       { label: 'Hospital Beds per 1,000 (2024)',          format: v => v != null ? `${v.toFixed(2)} / 1k` : 'No data',       thresholds: [0.8, 1.5, 2.2],   colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  facilitiesCount2024: { label: 'Healthcare Facilities (2024)',             format: v => v != null ? `${v} facilities` : 'No data',           thresholds: [20, 60, 90],      colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  erVisits2024:        { label: 'ER Visits Annual (2024)',                  format: v => v != null ? `${(v/1000).toFixed(0)}k/yr` : 'No data', thresholds: [5000, 30000, 100000], colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  aging65Plus2024:     { label: 'Population Aged 65+ (2024)',               format: v => v != null ? `${v}%` : 'No data',                      thresholds: [14, 18, 22],      colors: ['#f7fbff','#9ecae1','#3182bd','#08306b'] },
+  waitTimes2024:       { label: 'Specialist Wait Time (2024)',               format: v => v != null ? `${v} wks` : 'No data',                   thresholds: [15, 20, 26],      colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  withoutFamilyDr2024: { label: 'Residents Without Family Doctor (2024)',   format: v => v != null ? `${(v/1000).toFixed(0)}k residents` : 'No data', thresholds: [5000, 20000, 50000], colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  homeCareWait2024:    { label: 'Home Care Wait Days (2024)',               format: v => v != null ? `${v} days` : 'No data',                  thresholds: [20, 35, 50],      colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  doctorsPer1k2024:    { label: 'Physicians per 100k (2024)',               format: v => v != null ? `${v} / 100k` : 'No data',               thresholds: [150, 200, 260],   colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  nursesPer1k2024:     { label: 'Nurses per 1,000 (2024)',                  format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data',      thresholds: [7, 10, 13],       colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  workerShortage2024:  { label: 'Healthcare Worker Shortage (2024)',        format: v => v != null ? `${v.toLocaleString()} workers` : 'No data', thresholds: [200, 600, 1000], colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  lifeExpectancy2024:  { label: 'Life Expectancy (2024)',                   format: v => v != null ? `${v.toFixed(1)} yrs` : 'No data',       thresholds: [81.5, 82.5, 83.5], colors: ['#feedde','#fdbe85','#3182bd','#08519c'] },
+  prevHosp2024:        { label: 'Preventable Hospitalizations per 100k (2024)', format: v => v != null ? `${v} / 100k` : 'No data',           thresholds: [200, 300, 400],   colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
+  chronicDisease2024:  { label: 'Chronic Disease Burden (2024)',            format: v => v != null ? `${v}%` : 'No data',                     thresholds: [18, 23, 28],      colors: ['#3fb950','#ffa657','#fd8d3c','#d94701'] },
 
   // Employment 2023 actuals
   totalJobs2023: {
@@ -790,7 +597,59 @@ const metaConfig = {
     format: v => v != null ? `${v.toFixed(2)} / 1.0` : 'No data',
     thresholds: [0.83, 0.86, 0.89],
     colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c']
-  }
+  },
+
+  // ── Placemaking & Livability ──────────────────────────────────────────────
+  // Supply
+  parksHectaresPerCapita2025: { label: 'Parks Area per Capita (2025)', format: v => v != null ? `${v.toFixed(2)} ha/cap` : 'No data', thresholds: [0.6, 0.75, 0.95], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  parksHectaresPerCapita2024: { label: 'Parks Area per Capita (2024)', format: v => v != null ? `${v.toFixed(2)} ha/cap` : 'No data', thresholds: [0.6, 0.75, 0.95], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  parksHectaresPerCapita2023: { label: 'Parks Area per Capita (2023)', format: v => v != null ? `${v.toFixed(2)} ha/cap` : 'No data', thresholds: [0.6, 0.75, 0.95], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  publicPlazasCount2025: { label: 'Public Plazas Count (2025)', format: v => v != null ? `${v} plazas` : 'No data', thresholds: [2, 5, 8], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  publicPlazasCount2024: { label: 'Public Plazas Count (2024)', format: v => v != null ? `${v} plazas` : 'No data', thresholds: [2, 5, 8], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  publicPlazasCount2023: { label: 'Public Plazas Count (2023)', format: v => v != null ? `${v} plazas` : 'No data', thresholds: [2, 5, 8], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  publicAmenitiesPer10002025: { label: 'Public Amenities per 1,000 (2025)', format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data', thresholds: [2.8, 3.6, 4.4], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  publicAmenitiesPer10002024: { label: 'Public Amenities per 1,000 (2024)', format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data', thresholds: [2.8, 3.6, 4.4], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  publicAmenitiesPer10002023: { label: 'Public Amenities per 1,000 (2023)', format: v => v != null ? `${v.toFixed(1)} / 1k` : 'No data', thresholds: [2.8, 3.6, 4.4], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  // Accessibility
+  averageDistanceParksMeters2025: { label: 'Avg. Distance to Park (2025)', format: v => v != null ? `${v.toLocaleString()}m` : 'No data', thresholds: [350, 450, 580], colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701'] },
+  averageDistanceParksMeters2024: { label: 'Avg. Distance to Park (2024)', format: v => v != null ? `${v.toLocaleString()}m` : 'No data', thresholds: [350, 450, 580], colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701'] },
+  averageDistanceParksMeters2023: { label: 'Avg. Distance to Park (2023)', format: v => v != null ? `${v.toLocaleString()}m` : 'No data', thresholds: [350, 450, 580], colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701'] },
+  percentWithin400mPark2025: { label: '% Residents Within 400m of Park (2025)', format: v => v != null ? `${v}%` : 'No data', thresholds: [55, 70, 85], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  percentWithin400mPark2024: { label: '% Residents Within 400m of Park (2024)', format: v => v != null ? `${v}%` : 'No data', thresholds: [55, 70, 85], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  percentWithin400mPark2023: { label: '% Residents Within 400m of Park (2023)', format: v => v != null ? `${v}%` : 'No data', thresholds: [55, 70, 85], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  transitAccessibilityScore2025: { label: 'Transit Accessibility Score (2025)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [50, 65, 80], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  transitAccessibilityScore2024: { label: 'Transit Accessibility Score (2024)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [50, 65, 80], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  transitAccessibilityScore2023: { label: 'Transit Accessibility Score (2023)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [50, 65, 80], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  // Vibrancy
+  annualEventsCount2025: { label: 'Annual Public Events (2025)', format: v => v != null ? `${v} events` : 'No data', thresholds: [6, 15, 30], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  annualEventsCount2024: { label: 'Annual Public Events (2024)', format: v => v != null ? `${v} events` : 'No data', thresholds: [6, 15, 30], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  annualEventsCount2023: { label: 'Annual Public Events (2023)', format: v => v != null ? `${v} events` : 'No data', thresholds: [6, 15, 30], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  eventAttendanceAnnual2025: { label: 'Annual Event Attendance (2025)', format: v => v != null ? `${v.toLocaleString()}` : 'No data', thresholds: [20000, 70000, 150000], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  eventAttendanceAnnual2024: { label: 'Annual Event Attendance (2024)', format: v => v != null ? `${v.toLocaleString()}` : 'No data', thresholds: [20000, 70000, 150000], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  eventAttendanceAnnual2023: { label: 'Annual Event Attendance (2023)', format: v => v != null ? `${v.toLocaleString()}` : 'No data', thresholds: [20000, 70000, 150000], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  businessActivityIndex2025: { label: 'Business Activity Index (2025)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [56, 68, 80], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  businessActivityIndex2024: { label: 'Business Activity Index (2024)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [56, 68, 80], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  businessActivityIndex2023: { label: 'Business Activity Index (2023)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [56, 68, 80], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  // Livability
+  safetyScore2025: { label: 'Safety Score (2025)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [67, 73, 79], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  safetyScore2024: { label: 'Safety Score (2024)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [67, 73, 79], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  safetyScore2023: { label: 'Safety Score (2023)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [67, 73, 79], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  cleanlinessMaintenanceIndex2025: { label: 'Cleanliness & Maintenance Index (2025)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [67, 73, 79], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  cleanlinessMaintenanceIndex2024: { label: 'Cleanliness & Maintenance Index (2024)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [67, 73, 79], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  cleanlinessMaintenanceIndex2023: { label: 'Cleanliness & Maintenance Index (2023)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [67, 73, 79], colors: ['#feedde', '#fdbe85', '#41b6c4', '#225ea8'] },
+  noiseComplaintIndex2025: { label: 'Noise Complaint Index (2025)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [33, 40, 46], colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701'] },
+  noiseComplaintIndex2024: { label: 'Noise Complaint Index (2024)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [33, 40, 46], colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701'] },
+  noiseComplaintIndex2023: { label: 'Noise Complaint Index (2023)', format: v => v != null ? `${v} / 100` : 'No data', thresholds: [33, 40, 46], colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701'] },
+  // Community Engagement
+  communityEventsParticipationRate2025: { label: 'Community Event Participation (2025)', format: v => v != null ? `${v}%` : 'No data', thresholds: [25, 40, 52], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  communityEventsParticipationRate2024: { label: 'Community Event Participation (2024)', format: v => v != null ? `${v}%` : 'No data', thresholds: [25, 40, 52], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  communityEventsParticipationRate2023: { label: 'Community Event Participation (2023)', format: v => v != null ? `${v}%` : 'No data', thresholds: [25, 40, 52], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  localProgramsAvailability2025: { label: 'Local Programs Available (2025)', format: v => v != null ? `${v} programs` : 'No data', thresholds: [40, 80, 130], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  localProgramsAvailability2024: { label: 'Local Programs Available (2024)', format: v => v != null ? `${v} programs` : 'No data', thresholds: [40, 80, 130], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  localProgramsAvailability2023: { label: 'Local Programs Available (2023)', format: v => v != null ? `${v} programs` : 'No data', thresholds: [40, 80, 130], colors: ['#f7fcf5', '#74c476', '#238b45', '#00441b'] },
+  volunteerEngagementRate2025: { label: 'Volunteer Engagement Rate (2025)', format: v => v != null ? `${v}%` : 'No data', thresholds: [15, 22, 29], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  volunteerEngagementRate2024: { label: 'Volunteer Engagement Rate (2024)', format: v => v != null ? `${v}%` : 'No data', thresholds: [15, 22, 29], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] },
+  volunteerEngagementRate2023: { label: 'Volunteer Engagement Rate (2023)', format: v => v != null ? `${v}%` : 'No data', thresholds: [15, 22, 29], colors: ['#edf8fb', '#b2e2e2', '#66c2a4', '#238b45'] }
 };
 
 // Metrics whose displayed values are projected estimates (appended with *)
@@ -802,13 +661,15 @@ const PREDICTED_METRICS = new Set([
   'homelessness2025','chronicHomeless2025','livingRough2025','shelterBeds2025','supportiveHousingUnits2025',
   'housingTarget2031',
   // Transportation 2025
-  'ridershipAnnual2025','vehicleCommuteShare2025','transitCoverage2025','walkabilityScore2025',
-  'commuteMins2025','congestionIndex2025','onTimePerformance2025','transportEmissions2025',
-  'evAdoption2025','transitModalShare2025',
-  // Healthcare 2025 (lifeExpectancy2025 is an actual measurement — excluded)
-  'bedsPer1k2025','clinicsPer1k2025','erVisits2025','aging65Plus2025',
-  'waitTimes2025','familyDrAccess2025','serviceAvail2025',
-  'doctorsPer1k2025','nursesPer1k2025','healthWorkersPer1k2025','prevHosp2025','healthScore2025',
+  'transitRoutes2025','serviceHoursAnnual2025','busFleetSize2025',
+  'ridershipAnnual2025','lrtRidership2025','transitUsers2025',
+  'transitCoverage2025','walkabilityScore2025','mobilityPlusTrips2025',
+  'commuteMins2025','onTimePerformance2025','serviceFrequency2025',
+  'transportEmissions2025','evAdoption2025','transitModalShare2025',
+  // Healthcare 2025
+  'bedsPer1k2025','facilitiesCount2025','erVisits2025','aging65Plus2025',
+  'waitTimes2025','withoutFamilyDr2025','homeCareWait2025',
+  'doctorsPer1k2025','nursesPer1k2025','workerShortage2025','prevHosp2025','chronicDisease2025',
   // Employment 2025
   'totalJobs2025','jobGrowth2025','lfp2025','unemp2025','income2025',
   'wageGrowth2025','inequality2025','diversity2025','retention2025','layoffs2025','resilience2025'
@@ -890,80 +751,96 @@ async function fetchBoundary(city) {
       shelterBeds2025: city.shelterBeds2025,
       supportiveHousingUnits2025: city.supportiveHousingUnits2025,
       // Transportation 2025
+      transitRoutes2025: city.transitRoutes2025,
+      serviceHoursAnnual2025: city.serviceHoursAnnual2025,
+      busFleetSize2025: city.busFleetSize2025,
+      lrtStations2025: city.lrtStations2025,
       ridershipAnnual2025: city.ridershipAnnual2025,
-      vehicleCommuteShare2025: city.vehicleCommuteShare2025,
+      lrtRidership2025: city.lrtRidership2025,
+      transitUsers2025: city.transitUsers2025,
       transitCoverage2025: city.transitCoverage2025,
       walkabilityScore2025: city.walkabilityScore2025,
+      mobilityPlusTrips2025: city.mobilityPlusTrips2025,
       commuteMins2025: city.commuteMins2025,
-      congestionIndex2025: city.congestionIndex2025,
       onTimePerformance2025: city.onTimePerformance2025,
+      serviceFrequency2025: city.serviceFrequency2025,
       transportEmissions2025: city.transportEmissions2025,
       evAdoption2025: city.evAdoption2025,
       transitModalShare2025: city.transitModalShare2025,
       // Transportation 2024
+      transitRoutes2024: city.transitRoutes2024,
+      serviceHoursAnnual2024: city.serviceHoursAnnual2024,
+      busFleetSize2024: city.busFleetSize2024,
       ridershipAnnual2024: city.ridershipAnnual2024,
-      vehicleCommuteShare2024: city.vehicleCommuteShare2024,
+      lrtRidership2024: city.lrtRidership2024,
+      transitUsers2024: city.transitUsers2024,
       transitCoverage2024: city.transitCoverage2024,
       walkabilityScore2024: city.walkabilityScore2024,
+      mobilityPlusTrips2024: city.mobilityPlusTrips2024,
       commuteMins2024: city.commuteMins2024,
-      congestionIndex2024: city.congestionIndex2024,
       onTimePerformance2024: city.onTimePerformance2024,
+      serviceFrequency2024: city.serviceFrequency2024,
       transportEmissions2024: city.transportEmissions2024,
       evAdoption2024: city.evAdoption2024,
       transitModalShare2024: city.transitModalShare2024,
       // Transportation 2023
+      transitRoutes2023: city.transitRoutes2023,
+      serviceHoursAnnual2023: city.serviceHoursAnnual2023,
+      busFleetSize2023: city.busFleetSize2023,
       ridershipAnnual2023: city.ridershipAnnual2023,
-      vehicleCommuteShare2023: city.vehicleCommuteShare2023,
+      lrtRidership2023: city.lrtRidership2023,
+      transitUsers2023: city.transitUsers2023,
       transitCoverage2023: city.transitCoverage2023,
       walkabilityScore2023: city.walkabilityScore2023,
+      mobilityPlusTrips2023: city.mobilityPlusTrips2023,
       commuteMins2023: city.commuteMins2023,
-      congestionIndex2023: city.congestionIndex2023,
       onTimePerformance2023: city.onTimePerformance2023,
+      serviceFrequency2023: city.serviceFrequency2023,
       transportEmissions2023: city.transportEmissions2023,
       evAdoption2023: city.evAdoption2023,
       transitModalShare2023: city.transitModalShare2023,
       // Healthcare 2025
       bedsPer1k2025: city.bedsPer1k2025,
-      clinicsPer1k2025: city.clinicsPer1k2025,
+      facilitiesCount2025: city.facilitiesCount2025,
       erVisits2025: city.erVisits2025,
       aging65Plus2025: city.aging65Plus2025,
       waitTimes2025: city.waitTimes2025,
-      familyDrAccess2025: city.familyDrAccess2025,
-      serviceAvail2025: city.serviceAvail2025,
+      withoutFamilyDr2025: city.withoutFamilyDr2025,
+      homeCareWait2025: city.homeCareWait2025,
       doctorsPer1k2025: city.doctorsPer1k2025,
       nursesPer1k2025: city.nursesPer1k2025,
-      healthWorkersPer1k2025: city.healthWorkersPer1k2025,
+      workerShortage2025: city.workerShortage2025,
       lifeExpectancy2025: city.lifeExpectancy2025,
       prevHosp2025: city.prevHosp2025,
-      healthScore2025: city.healthScore2025,
+      chronicDisease2025: city.chronicDisease2025,
       // Healthcare 2024
       bedsPer1k2024: city.bedsPer1k2024,
-      clinicsPer1k2024: city.clinicsPer1k2024,
+      facilitiesCount2024: city.facilitiesCount2024,
       erVisits2024: city.erVisits2024,
       aging65Plus2024: city.aging65Plus2024,
       waitTimes2024: city.waitTimes2024,
-      familyDrAccess2024: city.familyDrAccess2024,
-      serviceAvail2024: city.serviceAvail2024,
+      withoutFamilyDr2024: city.withoutFamilyDr2024,
+      homeCareWait2024: city.homeCareWait2024,
       doctorsPer1k2024: city.doctorsPer1k2024,
       nursesPer1k2024: city.nursesPer1k2024,
-      healthWorkersPer1k2024: city.healthWorkersPer1k2024,
+      workerShortage2024: city.workerShortage2024,
       lifeExpectancy2024: city.lifeExpectancy2024,
       prevHosp2024: city.prevHosp2024,
-      healthScore2024: city.healthScore2024,
+      chronicDisease2024: city.chronicDisease2024,
       // Healthcare 2023
       bedsPer1k2023: city.bedsPer1k2023,
-      clinicsPer1k2023: city.clinicsPer1k2023,
+      facilitiesCount2023: city.facilitiesCount2023,
       erVisits2023: city.erVisits2023,
       aging65Plus2023: city.aging65Plus2023,
       waitTimes2023: city.waitTimes2023,
-      familyDrAccess2023: city.familyDrAccess2023,
-      serviceAvail2023: city.serviceAvail2023,
+      withoutFamilyDr2023: city.withoutFamilyDr2023,
+      homeCareWait2023: city.homeCareWait2023,
       doctorsPer1k2023: city.doctorsPer1k2023,
       nursesPer1k2023: city.nursesPer1k2023,
-      healthWorkersPer1k2023: city.healthWorkersPer1k2023,
+      workerShortage2023: city.workerShortage2023,
       lifeExpectancy2023: city.lifeExpectancy2023,
       prevHosp2023: city.prevHosp2023,
-      healthScore2023: city.healthScore2023,
+      chronicDisease2023: city.chronicDisease2023,
       // Employment 2025
       totalJobs2025: city.totalJobs2025,
       jobGrowth2025: city.jobGrowth2025,
@@ -999,7 +876,55 @@ async function fetchBoundary(city) {
       diversity2023: city.diversity2023,
       retention2023: city.retention2023,
       layoffs2023: city.layoffs2023,
-      resilience2023: city.resilience2023
+      resilience2023: city.resilience2023,
+      // Placemaking 2025
+      parksHectaresPerCapita2025: city.parksHectaresPerCapita2025,
+      publicPlazasCount2025: city.publicPlazasCount2025,
+      publicAmenitiesPer10002025: city.publicAmenitiesPer10002025,
+      averageDistanceParksMeters2025: city.averageDistanceParksMeters2025,
+      percentWithin400mPark2025: city.percentWithin400mPark2025,
+      transitAccessibilityScore2025: city.transitAccessibilityScore2025,
+      annualEventsCount2025: city.annualEventsCount2025,
+      eventAttendanceAnnual2025: city.eventAttendanceAnnual2025,
+      businessActivityIndex2025: city.businessActivityIndex2025,
+      safetyScore2025: city.safetyScore2025,
+      cleanlinessMaintenanceIndex2025: city.cleanlinessMaintenanceIndex2025,
+      noiseComplaintIndex2025: city.noiseComplaintIndex2025,
+      communityEventsParticipationRate2025: city.communityEventsParticipationRate2025,
+      localProgramsAvailability2025: city.localProgramsAvailability2025,
+      volunteerEngagementRate2025: city.volunteerEngagementRate2025,
+      // Placemaking 2024
+      parksHectaresPerCapita2024: city.parksHectaresPerCapita2024,
+      publicPlazasCount2024: city.publicPlazasCount2024,
+      publicAmenitiesPer10002024: city.publicAmenitiesPer10002024,
+      averageDistanceParksMeters2024: city.averageDistanceParksMeters2024,
+      percentWithin400mPark2024: city.percentWithin400mPark2024,
+      transitAccessibilityScore2024: city.transitAccessibilityScore2024,
+      annualEventsCount2024: city.annualEventsCount2024,
+      eventAttendanceAnnual2024: city.eventAttendanceAnnual2024,
+      businessActivityIndex2024: city.businessActivityIndex2024,
+      safetyScore2024: city.safetyScore2024,
+      cleanlinessMaintenanceIndex2024: city.cleanlinessMaintenanceIndex2024,
+      noiseComplaintIndex2024: city.noiseComplaintIndex2024,
+      communityEventsParticipationRate2024: city.communityEventsParticipationRate2024,
+      localProgramsAvailability2024: city.localProgramsAvailability2024,
+      volunteerEngagementRate2024: city.volunteerEngagementRate2024,
+      // Placemaking 2023
+      parksHectaresPerCapita2023: city.parksHectaresPerCapita2023,
+      publicPlazasCount2023: city.publicPlazasCount2023,
+      publicAmenitiesPer10002023: city.publicAmenitiesPer10002023,
+      averageDistanceParksMeters2023: city.averageDistanceParksMeters2023,
+      percentWithin400mPark2023: city.percentWithin400mPark2023,
+      transitAccessibilityScore2023: city.transitAccessibilityScore2023,
+      annualEventsCount2023: city.annualEventsCount2023,
+      eventAttendanceAnnual2023: city.eventAttendanceAnnual2023,
+      businessActivityIndex2023: city.businessActivityIndex2023,
+      safetyScore2023: city.safetyScore2023,
+      cleanlinessMaintenanceIndex2023: city.cleanlinessMaintenanceIndex2023,
+      noiseComplaintIndex2023: city.noiseComplaintIndex2023,
+      communityEventsParticipationRate2023: city.communityEventsParticipationRate2023,
+      localProgramsAvailability2023: city.localProgramsAvailability2023,
+      volunteerEngagementRate2023: city.volunteerEngagementRate2023
     }
   };
 }

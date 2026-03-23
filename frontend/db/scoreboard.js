@@ -190,6 +190,51 @@ const scoreboardDB = {
         { label: 'Layoff Rate',             predicted: true, definition: '% of workforce subject to involuntary job loss during the year (2025)',       higherIsBetter: false, format: v => `${v}%`,      values: [6.1,  6.5,  7.0,  5.5,  5.0 ] },
         { label: 'Economic Resilience',     predicted: true, definition: 'Composite score (0–1) measuring the economy\'s capacity to absorb shocks (2025)', higherIsBetter: true, format: v => v.toFixed(2), values: [0.85, 0.85, 0.82, 0.87, 0.82] }
       ]
+    },
+    {
+      key: 'placemaking_supply',
+      label: 'Placemaking — Green & Public Space Supply',
+      metrics: [
+        { label: 'Parks Area per Capita',       predicted: false, definition: 'Total parkland in hectares divided by population (2025)', higherIsBetter: true,  format: v => `${v.toFixed(2)} ha/cap`, values: [0.75, 0.84, 0.96, 0.79, 1.29]  },
+        { label: 'Public Plazas Count',         predicted: false, definition: 'Number of publicly accessible plazas and squares (2025)',  higherIsBetter: true,  format: v => v.toFixed(0),            values: [15,   8,    7,    6,    2]     },
+        { label: 'Public Amenities per 1,000',  predicted: false, definition: 'Parks, benches, fountains and similar amenities per 1,000 residents (2025)', higherIsBetter: true, format: v => v.toFixed(2), values: [4.2, 4.7, 5.2, 4.4, 2.85] }
+      ]
+    },
+    {
+      key: 'placemaking_accessibility',
+      label: 'Placemaking — Accessibility',
+      metrics: [
+        { label: 'Avg Distance to Nearest Park',    predicted: false, definition: 'Average walking distance in metres to nearest green space (2025)', higherIsBetter: false, format: v => `${v} m`,   values: [380, 340, 300, 410, 597.5]  },
+        { label: '% Residents within 400 m Park',   predicted: false, definition: '% of residents living within a 400 m walk of a park (2025)',       higherIsBetter: true,  format: v => `${v}%`,   values: [83, 86, 90, 79, 55.25]     },
+        { label: 'Transit Accessibility Score',     predicted: false, definition: 'Composite 0–100 score for transit access to key destinations (2025)', higherIsBetter: true, format: v => `${v} / 100`, values: [78, 82, 88, 75, 58.75]  }
+      ]
+    },
+    {
+      key: 'placemaking_vibrancy',
+      label: 'Placemaking — Cultural Vibrancy',
+      metrics: [
+        { label: 'Annual Events Count',        predicted: false, definition: 'Number of public events and festivals held annually (2025)',            higherIsBetter: true, format: v => v.toFixed(0),                    values: [72, 40, 34, 24, 9]          },
+        { label: 'Annual Event Attendance',    predicted: false, definition: 'Total attendees across all public events per year (2025)',             higherIsBetter: true, format: v => v >= 1000 ? `${(v/1000).toFixed(0)}k` : v.toFixed(0), values: [465000, 238000, 175000, 148000, 26500] },
+        { label: 'Business Activity Index',    predicted: false, definition: 'Composite 0–100 score for retail, dining and commercial vitality (2025)', higherIsBetter: true, format: v => `${v} / 100`,                  values: [82, 84, 87, 80, 67.75]      }
+      ]
+    },
+    {
+      key: 'placemaking_livability',
+      label: 'Placemaking — Livability & Safety',
+      metrics: [
+        { label: 'Safety Score',                   predicted: false, definition: 'Composite 0–100 score based on crime rates and perceptions of safety (2025)', higherIsBetter: true,  format: v => `${v} / 100`,        values: [75, 73, 79, 77, 81.5]   },
+        { label: 'Cleanliness & Maintenance Index', predicted: false, definition: 'Composite 0–100 score for public space cleanliness and upkeep (2025)',         higherIsBetter: true,  format: v => `${v} / 100`,        values: [76, 77, 81, 78, 79.75]  },
+        { label: 'Noise Complaint Index',           predicted: false, definition: 'Composite 0–100 score based on noise complaint density (lower is better, 2025)', higherIsBetter: false, format: v => `${v} / 100`,      values: [40, 43, 37, 41, 33]     }
+      ]
+    },
+    {
+      key: 'placemaking_community',
+      label: 'Placemaking — Community Engagement',
+      metrics: [
+        { label: 'Community Events Participation', predicted: false, definition: '% of residents who participated in at least one community event (2025)', higherIsBetter: true, format: v => `${v}%`,    values: [55, 53, 59, 51, 46.5]   },
+        { label: 'Local Programs Availability',    predicted: false, definition: 'Number of municipality-run recreational and social programs (2025)',     higherIsBetter: true, format: v => v.toFixed(0), values: [195, 138, 162, 120, 59]  },
+        { label: 'Volunteer Engagement Rate',      predicted: false, definition: '% of residents engaged in formal volunteer activities (2025)',           higherIsBetter: true, format: v => `${v}%`,    values: [31, 29, 35, 27, 24.25]  }
+      ]
     }
 
   ]

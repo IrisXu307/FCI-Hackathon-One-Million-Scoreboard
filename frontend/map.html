@@ -28,7 +28,7 @@
         <option value="transportation">Transportation</option>
         <option value="healthcare">Healthcare</option>
         <option value="employment">Employment &amp; Jobs</option>
-        <option value="placemaking" disabled>Placemaking &amp; Livability (coming soon)</option>
+        <option value="placemaking">Placemaking &amp; Livability</option>
       </select>
 
       <label for="yearSelect">Year</label>
@@ -133,32 +133,50 @@
         ]}
       ],
       transportation: [
+        { group: 'Supply', options: [
+          { value: 'transitRoutes2025',      label: 'Transit Routes (2025)',          years: ['all', '2025'] },
+          { value: 'serviceHoursAnnual2025', label: 'Annual Service Hours (2025)',    years: ['all', '2025'] },
+          { value: 'busFleetSize2025',       label: 'Bus Fleet Size (2025)',          years: ['all', '2025'] },
+          { value: 'lrtStations2025',        label: 'LRT Stations (2025)',            years: ['all', '2025'] },
+          { value: 'transitRoutes2024',      label: 'Transit Routes (2024)',          years: ['all', '2024'] },
+          { value: 'serviceHoursAnnual2024', label: 'Annual Service Hours (2024)',    years: ['all', '2024'] },
+          { value: 'busFleetSize2024',       label: 'Bus Fleet Size (2024)',          years: ['all', '2024'] },
+          { value: 'transitRoutes2023',      label: 'Transit Routes (2023)',          years: ['all', '2023'] },
+          { value: 'serviceHoursAnnual2023', label: 'Annual Service Hours (2023)',    years: ['all', '2023'] },
+          { value: 'busFleetSize2023',       label: 'Bus Fleet Size (2023)',          years: ['all', '2023'] }
+        ]},
         { group: 'Demand', options: [
-          { value: 'ridershipAnnual2025',     label: 'Annual Ridership (2025)',      years: ['all', '2025'] },
-          { value: 'vehicleCommuteShare2025', label: 'Vehicle Commute Share (2025)', years: ['all', '2025'] },
-          { value: 'ridershipAnnual2024',     label: 'Annual Ridership (2024)',      years: ['all', '2024'] },
-          { value: 'vehicleCommuteShare2024', label: 'Vehicle Commute Share (2024)', years: ['all', '2024'] },
-          { value: 'ridershipAnnual2023',     label: 'Annual Ridership (2023)',      years: ['all', '2023'] },
-          { value: 'vehicleCommuteShare2023', label: 'Vehicle Commute Share (2023)', years: ['all', '2023'] }
+          { value: 'ridershipAnnual2025', label: 'Annual Ridership (2025)',    years: ['all', '2025'] },
+          { value: 'lrtRidership2025',    label: 'LRT Ridership (2025)',       years: ['all', '2025'] },
+          { value: 'transitUsers2025',    label: '% Using Transit (2025)',     years: ['all', '2025'] },
+          { value: 'ridershipAnnual2024', label: 'Annual Ridership (2024)',    years: ['all', '2024'] },
+          { value: 'lrtRidership2024',    label: 'LRT Ridership (2024)',       years: ['all', '2024'] },
+          { value: 'transitUsers2024',    label: '% Using Transit (2024)',     years: ['all', '2024'] },
+          { value: 'ridershipAnnual2023', label: 'Annual Ridership (2023)',    years: ['all', '2023'] },
+          { value: 'lrtRidership2023',    label: 'LRT Ridership (2023)',       years: ['all', '2023'] },
+          { value: 'transitUsers2023',    label: '% Using Transit (2023)',     years: ['all', '2023'] }
         ]},
         { group: 'Accessibility', options: [
-          { value: 'transitCoverage2025',  label: 'Pop. Within 500m of Transit (2025)', years: ['all', '2025'] },
-          { value: 'walkabilityScore2025', label: 'Walkability Score (2025)',            years: ['all', '2025'] },
-          { value: 'transitCoverage2024',  label: 'Pop. Within 500m of Transit (2024)', years: ['all', '2024'] },
-          { value: 'walkabilityScore2024', label: 'Walkability Score (2024)',            years: ['all', '2024'] },
-          { value: 'transitCoverage2023',  label: 'Pop. Within 500m of Transit (2023)', years: ['all', '2023'] },
-          { value: 'walkabilityScore2023', label: 'Walkability Score (2023)',            years: ['all', '2023'] }
+          { value: 'transitCoverage2025',    label: 'Pop. Within 500m of Transit (2025)', years: ['all', '2025'] },
+          { value: 'walkabilityScore2025',   label: 'Walkability Score (2025)',            years: ['all', '2025'] },
+          { value: 'mobilityPlusTrips2025',  label: 'Mobility+ Trips (2025)',              years: ['all', '2025'] },
+          { value: 'transitCoverage2024',    label: 'Pop. Within 500m of Transit (2024)', years: ['all', '2024'] },
+          { value: 'walkabilityScore2024',   label: 'Walkability Score (2024)',            years: ['all', '2024'] },
+          { value: 'mobilityPlusTrips2024',  label: 'Mobility+ Trips (2024)',              years: ['all', '2024'] },
+          { value: 'transitCoverage2023',    label: 'Pop. Within 500m of Transit (2023)', years: ['all', '2023'] },
+          { value: 'walkabilityScore2023',   label: 'Walkability Score (2023)',            years: ['all', '2023'] },
+          { value: 'mobilityPlusTrips2023',  label: 'Mobility+ Trips (2023)',              years: ['all', '2023'] }
         ]},
         { group: 'Efficiency', options: [
-          { value: 'commuteMins2025',       label: 'Avg. Commute Time (2025)',   years: ['all', '2025'] },
-          { value: 'congestionIndex2025',   label: 'Congestion Index (2025)',    years: ['all', '2025'] },
-          { value: 'onTimePerformance2025', label: 'On-Time Performance (2025)', years: ['all', '2025'] },
-          { value: 'commuteMins2024',       label: 'Avg. Commute Time (2024)',   years: ['all', '2024'] },
-          { value: 'congestionIndex2024',   label: 'Congestion Index (2024)',    years: ['all', '2024'] },
-          { value: 'onTimePerformance2024', label: 'On-Time Performance (2024)', years: ['all', '2024'] },
-          { value: 'commuteMins2023',       label: 'Avg. Commute Time (2023)',   years: ['all', '2023'] },
-          { value: 'congestionIndex2023',   label: 'Congestion Index (2023)',    years: ['all', '2023'] },
-          { value: 'onTimePerformance2023', label: 'On-Time Performance (2023)', years: ['all', '2023'] }
+          { value: 'commuteMins2025',       label: 'Avg. Commute Time (2025)',       years: ['all', '2025'] },
+          { value: 'onTimePerformance2025', label: 'On-Time Performance (2025)',     years: ['all', '2025'] },
+          { value: 'serviceFrequency2025',  label: 'Peak Service Frequency (2025)', years: ['all', '2025'] },
+          { value: 'commuteMins2024',       label: 'Avg. Commute Time (2024)',       years: ['all', '2024'] },
+          { value: 'onTimePerformance2024', label: 'On-Time Performance (2024)',     years: ['all', '2024'] },
+          { value: 'serviceFrequency2024',  label: 'Peak Service Frequency (2024)', years: ['all', '2024'] },
+          { value: 'commuteMins2023',       label: 'Avg. Commute Time (2023)',       years: ['all', '2023'] },
+          { value: 'onTimePerformance2023', label: 'On-Time Performance (2023)',     years: ['all', '2023'] },
+          { value: 'serviceFrequency2023',  label: 'Peak Service Frequency (2023)', years: ['all', '2023'] }
         ]},
         { group: 'Sustainability', options: [
           { value: 'transportEmissions2025', label: 'Transport Emissions (2025)', years: ['all', '2025'] },
@@ -174,12 +192,12 @@
       ],
       healthcare: [
         { group: 'Capacity', options: [
-          { value: 'bedsPer1k2025',    label: 'Hospital Beds per 1k (2025)',    years: ['all', '2025'] },
-          { value: 'clinicsPer1k2025', label: 'Clinics per 1k (2025)',          years: ['all', '2025'] },
-          { value: 'bedsPer1k2024',    label: 'Hospital Beds per 1k (2024)',    years: ['all', '2024'] },
-          { value: 'clinicsPer1k2024', label: 'Clinics per 1k (2024)',          years: ['all', '2024'] },
-          { value: 'bedsPer1k2023',    label: 'Hospital Beds per 1k (2023)',    years: ['all', '2023'] },
-          { value: 'clinicsPer1k2023', label: 'Clinics per 1k (2023)',          years: ['all', '2023'] }
+          { value: 'bedsPer1k2025',         label: 'Hospital Beds per 1k (2025)',      years: ['all', '2025'] },
+          { value: 'facilitiesCount2025',   label: 'Healthcare Facilities (2025)',     years: ['all', '2025'] },
+          { value: 'bedsPer1k2024',         label: 'Hospital Beds per 1k (2024)',      years: ['all', '2024'] },
+          { value: 'facilitiesCount2024',   label: 'Healthcare Facilities (2024)',     years: ['all', '2024'] },
+          { value: 'bedsPer1k2023',         label: 'Hospital Beds per 1k (2023)',      years: ['all', '2023'] },
+          { value: 'facilitiesCount2023',   label: 'Healthcare Facilities (2023)',     years: ['all', '2023'] }
         ]},
         { group: 'Demand', options: [
           { value: 'erVisits2025',    label: 'ER Visits per Capita (2025)',  years: ['all', '2025'] },
@@ -190,37 +208,37 @@
           { value: 'aging65Plus2023', label: 'Population Aged 65+ (2023)',   years: ['all', '2023'] }
         ]},
         { group: 'Access', options: [
-          { value: 'waitTimes2025',      label: 'Specialist Wait Time (2025)',          years: ['all', '2025'] },
-          { value: 'familyDrAccess2025', label: 'Population with Family Doctor (2025)', years: ['all', '2025'] },
-          { value: 'serviceAvail2025',   label: 'Service Availability Score (2025)',    years: ['all', '2025'] },
-          { value: 'waitTimes2024',      label: 'Specialist Wait Time (2024)',          years: ['all', '2024'] },
-          { value: 'familyDrAccess2024', label: 'Population with Family Doctor (2024)', years: ['all', '2024'] },
-          { value: 'serviceAvail2024',   label: 'Service Availability Score (2024)',    years: ['all', '2024'] },
-          { value: 'waitTimes2023',      label: 'Specialist Wait Time (2023)',          years: ['all', '2023'] },
-          { value: 'familyDrAccess2023', label: 'Population with Family Doctor (2023)', years: ['all', '2023'] },
-          { value: 'serviceAvail2023',   label: 'Service Availability Score (2023)',    years: ['all', '2023'] }
+          { value: 'waitTimes2025',       label: 'Specialist Wait Time (2025)',              years: ['all', '2025'] },
+          { value: 'withoutFamilyDr2025', label: 'Residents Without Family Doctor (2025)',  years: ['all', '2025'] },
+          { value: 'homeCareWait2025',    label: 'Home Care Wait Days (2025)',               years: ['all', '2025'] },
+          { value: 'waitTimes2024',       label: 'Specialist Wait Time (2024)',              years: ['all', '2024'] },
+          { value: 'withoutFamilyDr2024', label: 'Residents Without Family Doctor (2024)',  years: ['all', '2024'] },
+          { value: 'homeCareWait2024',    label: 'Home Care Wait Days (2024)',               years: ['all', '2024'] },
+          { value: 'waitTimes2023',       label: 'Specialist Wait Time (2023)',              years: ['all', '2023'] },
+          { value: 'withoutFamilyDr2023', label: 'Residents Without Family Doctor (2023)',  years: ['all', '2023'] },
+          { value: 'homeCareWait2023',    label: 'Home Care Wait Days (2023)',               years: ['all', '2023'] }
         ]},
         { group: 'Workforce', options: [
-          { value: 'doctorsPer1k2025',       label: 'Physicians per 1k (2025)',          years: ['all', '2025'] },
-          { value: 'nursesPer1k2025',        label: 'Nurses per 1k (2025)',              years: ['all', '2025'] },
-          { value: 'healthWorkersPer1k2025', label: 'Healthcare Workers per 1k (2025)', years: ['all', '2025'] },
-          { value: 'doctorsPer1k2024',       label: 'Physicians per 1k (2024)',          years: ['all', '2024'] },
-          { value: 'nursesPer1k2024',        label: 'Nurses per 1k (2024)',              years: ['all', '2024'] },
-          { value: 'healthWorkersPer1k2024', label: 'Healthcare Workers per 1k (2024)', years: ['all', '2024'] },
-          { value: 'doctorsPer1k2023',       label: 'Physicians per 1k (2023)',          years: ['all', '2023'] },
-          { value: 'nursesPer1k2023',        label: 'Nurses per 1k (2023)',              years: ['all', '2023'] },
-          { value: 'healthWorkersPer1k2023', label: 'Healthcare Workers per 1k (2023)', years: ['all', '2023'] }
+          { value: 'doctorsPer1k2025',    label: 'Physicians per 100k (2025)',       years: ['all', '2025'] },
+          { value: 'nursesPer1k2025',     label: 'Nurses per 1k (2025)',             years: ['all', '2025'] },
+          { value: 'workerShortage2025',  label: 'Healthcare Worker Shortage (2025)', years: ['all', '2025'] },
+          { value: 'doctorsPer1k2024',    label: 'Physicians per 100k (2024)',       years: ['all', '2024'] },
+          { value: 'nursesPer1k2024',     label: 'Nurses per 1k (2024)',             years: ['all', '2024'] },
+          { value: 'workerShortage2024',  label: 'Healthcare Worker Shortage (2024)', years: ['all', '2024'] },
+          { value: 'doctorsPer1k2023',    label: 'Physicians per 100k (2023)',       years: ['all', '2023'] },
+          { value: 'nursesPer1k2023',     label: 'Nurses per 1k (2023)',             years: ['all', '2023'] },
+          { value: 'workerShortage2023',  label: 'Healthcare Worker Shortage (2023)', years: ['all', '2023'] }
         ]},
         { group: 'Outcomes', options: [
-          { value: 'lifeExpectancy2025', label: 'Life Expectancy (2025)',              years: ['all', '2025'] },
-          { value: 'prevHosp2025',       label: 'Preventable Hospitalizations (2025)', years: ['all', '2025'] },
-          { value: 'healthScore2025',    label: 'Health Outcomes Score (2025)',        years: ['all', '2025'] },
-          { value: 'lifeExpectancy2024', label: 'Life Expectancy (2024)',              years: ['all', '2024'] },
-          { value: 'prevHosp2024',       label: 'Preventable Hospitalizations (2024)', years: ['all', '2024'] },
-          { value: 'healthScore2024',    label: 'Health Outcomes Score (2024)',        years: ['all', '2024'] },
-          { value: 'lifeExpectancy2023', label: 'Life Expectancy (2023)',              years: ['all', '2023'] },
-          { value: 'prevHosp2023',       label: 'Preventable Hospitalizations (2023)', years: ['all', '2023'] },
-          { value: 'healthScore2023',    label: 'Health Outcomes Score (2023)',        years: ['all', '2023'] }
+          { value: 'lifeExpectancy2025', label: 'Life Expectancy (2025)',                     years: ['all', '2025'] },
+          { value: 'prevHosp2025',       label: 'Preventable Hospitalizations (2025)',        years: ['all', '2025'] },
+          { value: 'chronicDisease2025', label: 'Chronic Disease Burden (2025)',             years: ['all', '2025'] },
+          { value: 'lifeExpectancy2024', label: 'Life Expectancy (2024)',                     years: ['all', '2024'] },
+          { value: 'prevHosp2024',       label: 'Preventable Hospitalizations (2024)',        years: ['all', '2024'] },
+          { value: 'chronicDisease2024', label: 'Chronic Disease Burden (2024)',             years: ['all', '2024'] },
+          { value: 'lifeExpectancy2023', label: 'Life Expectancy (2023)',                     years: ['all', '2023'] },
+          { value: 'prevHosp2023',       label: 'Preventable Hospitalizations (2023)',        years: ['all', '2023'] },
+          { value: 'chronicDisease2023', label: 'Chronic Disease Burden (2023)',             years: ['all', '2023'] }
         ]}
       ],
       employment: [
@@ -267,6 +285,63 @@
           { value: 'layoffs2023',    label: 'Layoff Rate (2023)',               years: ['all', '2023'] },
           { value: 'resilience2023', label: 'Economic Resilience Score (2023)', years: ['all', '2023'] }
         ]}
+      ],
+      placemaking: [
+      { group: 'Supply', options: [
+        { value: 'parksHectaresPerCapita2025', label: 'Parks Area per Capita (2025)',          years: ['all', '2025'] },
+        { value: 'publicPlazasCount2025',      label: 'Public Plazas Count (2025)',            years: ['all', '2025'] },
+        { value: 'publicAmenitiesPer10002025', label: 'Public Amenities per 1,000 (2025)',    years: ['all', '2025'] },
+        { value: 'parksHectaresPerCapita2024', label: 'Parks Area per Capita (2024)',          years: ['all', '2024'] },
+        { value: 'publicPlazasCount2024',      label: 'Public Plazas Count (2024)',            years: ['all', '2024'] },
+        { value: 'publicAmenitiesPer10002024', label: 'Public Amenities per 1,000 (2024)',    years: ['all', '2024'] },
+        { value: 'parksHectaresPerCapita2023', label: 'Parks Area per Capita (2023)',          years: ['all', '2023'] },
+        { value: 'publicPlazasCount2023',      label: 'Public Plazas Count (2023)',            years: ['all', '2023'] },
+        { value: 'publicAmenitiesPer10002023', label: 'Public Amenities per 1,000 (2023)',    years: ['all', '2023'] }
+      ]},
+      { group: 'Accessibility', options: [
+        { value: 'averageDistanceParksMeters2025', label: 'Avg. Distance to Park (2025)',               years: ['all', '2025'] },
+        { value: 'percentWithin400mPark2025',      label: '% Residents Within 400m of Park (2025)',    years: ['all', '2025'] },
+        { value: 'transitAccessibilityScore2025',  label: 'Transit Accessibility Score (2025)',        years: ['all', '2025'] },
+        { value: 'averageDistanceParksMeters2024', label: 'Avg. Distance to Park (2024)',               years: ['all', '2024'] },
+        { value: 'percentWithin400mPark2024',      label: '% Residents Within 400m of Park (2024)',    years: ['all', '2024'] },
+        { value: 'transitAccessibilityScore2024',  label: 'Transit Accessibility Score (2024)',        years: ['all', '2024'] },
+        { value: 'averageDistanceParksMeters2023', label: 'Avg. Distance to Park (2023)',               years: ['all', '2023'] },
+        { value: 'percentWithin400mPark2023',      label: '% Residents Within 400m of Park (2023)',    years: ['all', '2023'] },
+        { value: 'transitAccessibilityScore2023',  label: 'Transit Accessibility Score (2023)',        years: ['all', '2023'] }
+      ]},
+      { group: 'Vibrancy', options: [
+        { value: 'annualEventsCount2025',     label: 'Annual Public Events (2025)',     years: ['all', '2025'] },
+        { value: 'eventAttendanceAnnual2025', label: 'Annual Event Attendance (2025)',  years: ['all', '2025'] },
+        { value: 'businessActivityIndex2025', label: 'Business Activity Index (2025)', years: ['all', '2025'] },
+        { value: 'annualEventsCount2024',     label: 'Annual Public Events (2024)',     years: ['all', '2024'] },
+        { value: 'eventAttendanceAnnual2024', label: 'Annual Event Attendance (2024)',  years: ['all', '2024'] },
+        { value: 'businessActivityIndex2024', label: 'Business Activity Index (2024)', years: ['all', '2024'] },
+        { value: 'annualEventsCount2023',     label: 'Annual Public Events (2023)',     years: ['all', '2023'] },
+        { value: 'eventAttendanceAnnual2023', label: 'Annual Event Attendance (2023)',  years: ['all', '2023'] },
+        { value: 'businessActivityIndex2023', label: 'Business Activity Index (2023)', years: ['all', '2023'] }
+      ]},
+      { group: 'Livability', options: [
+        { value: 'safetyScore2025',                label: 'Safety Score (2025)',              years: ['all', '2025'] },
+        { value: 'cleanlinessMaintenanceIndex2025', label: 'Cleanliness & Maintenance (2025)', years: ['all', '2025'] },
+        { value: 'noiseComplaintIndex2025',        label: 'Noise Complaint Index (2025)',     years: ['all', '2025'] },
+        { value: 'safetyScore2024',                label: 'Safety Score (2024)',              years: ['all', '2024'] },
+        { value: 'cleanlinessMaintenanceIndex2024', label: 'Cleanliness & Maintenance (2024)', years: ['all', '2024'] },
+        { value: 'noiseComplaintIndex2024',        label: 'Noise Complaint Index (2024)',     years: ['all', '2024'] },
+        { value: 'safetyScore2023',                label: 'Safety Score (2023)',              years: ['all', '2023'] },
+        { value: 'cleanlinessMaintenanceIndex2023', label: 'Cleanliness & Maintenance (2023)', years: ['all', '2023'] },
+        { value: 'noiseComplaintIndex2023',        label: 'Noise Complaint Index (2023)',     years: ['all', '2023'] }
+      ]},
+      { group: 'Community', options: [
+        { value: 'communityEventsParticipationRate2025', label: 'Community Event Participation (2025)', years: ['all', '2025'] },
+        { value: 'localProgramsAvailability2025',        label: 'Local Programs Available (2025)',       years: ['all', '2025'] },
+        { value: 'volunteerEngagementRate2025',          label: 'Volunteer Engagement Rate (2025)',      years: ['all', '2025'] },
+        { value: 'communityEventsParticipationRate2024', label: 'Community Event Participation (2024)', years: ['all', '2024'] },
+        { value: 'localProgramsAvailability2024',        label: 'Local Programs Available (2024)',       years: ['all', '2024'] },
+        { value: 'volunteerEngagementRate2024',          label: 'Volunteer Engagement Rate (2024)',      years: ['all', '2024'] },
+        { value: 'communityEventsParticipationRate2023', label: 'Community Event Participation (2023)', years: ['all', '2023'] },
+        { value: 'localProgramsAvailability2023',        label: 'Local Programs Available (2023)',       years: ['all', '2023'] },
+        { value: 'volunteerEngagementRate2023',          label: 'Volunteer Engagement Rate (2023)',      years: ['all', '2023'] }
+      ]}
       ]
     };
 

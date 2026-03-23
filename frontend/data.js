@@ -18,7 +18,9 @@ const cityMetrics = housingDB.cityMetrics.map(hCity => {
     .find(h => h.name === hCity.name) || {};
   const emCity = (typeof employmentCityMetrics !== 'undefined' ? employmentCityMetrics : [])
     .find(e => e.name === hCity.name) || {};
-  return Object.assign({}, hCity, tCity, hcCity, emCity);
+  const pmCity = (typeof placemakingCityMetrics !== 'undefined' ? placemakingCityMetrics : [])
+    .find(p => p.name === hCity.name) || {};
+  return Object.assign({}, hCity, tCity, hcCity, emCity, pmCity);
 });
 
 // Region-level metrics for map sidebar (housing)
@@ -35,3 +37,7 @@ const regionHealthcareMetrics = typeof healthcareRegionMetrics !== 'undefined'
 // Region-level metrics for map sidebar (employment)
 const regionEmploymentMetrics = typeof employmentRegionMetrics !== 'undefined'
   ? employmentRegionMetrics : {};
+
+// Region-level metrics for map sidebar (placemaking)
+const regionPlacemakingMetrics = typeof placemakingRegionMetrics !== 'undefined'
+  ? placemakingRegionMetrics : {};
