@@ -249,7 +249,6 @@ const metaConfig = {
     colors: ['#f7fbff', '#9ecae1', '#3182bd', '#08306b']
   },
   mobilityPlusTrips2023: { label: 'Mobility+ Trips (2023)', format: v => v != null ? `${v.toLocaleString()} trips` : 'No data', thresholds: [5000, 15000, 30000], colors: ['#feedde', '#fdbe85', '#3182bd', '#08519c'] },
-  serviceFrequency2023: { label: 'Peak Service Frequency (2023)', format: v => v != null ? `${v} min` : 'No data', thresholds: [8, 15, 25], colors: ['#3fb950', '#ffa657', '#fd8d3c', '#d94701'] },
   transitCoverage2023: {
     label: 'Pop. Within 500m of Transit (2023)',
     format: v => v != null ? `${v}%` : 'No data',
